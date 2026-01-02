@@ -1,222 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranshul Pamecha</title>
-    <link rel="stylesheet" href="styles.CSS">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pranshul Pamecha — AI Engineer</title>
+
+  <!-- IMPORTANT: use styles.css (lowercase) and rename your file accordingly -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <div class="nav-title">Pranshul Pamecha</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#involvement">Involvement</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+  <!-- Loading Screen -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-text">PP</div>
+      <div class="loader-sub">Loading portfolio…</div>
+    </div>
+  </div>
 
-    <!-- Home Section -->
-    <section id="home" class="home-section">
-        <canvas id="particle-canvas"></canvas>
-        <div class="home-content">
-            <h1 class="home-title">Welcome to My Techfolio</h1>
-            <p class="home-subtitle">
-                I'm Pranshul, a student at the University of Wisconsin-Madison.<br> Innovating the digital frontier!
-            </p>
-            <a href="#projects" class="home-button">Explore My Work</a>
-        </div>
-    </section>
+  <!-- Cursor -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <img src="Images/Pranshul.jpeg" alt="Pranshul Pamecha" class="about-image">
-                <div class="about-text">
-                    <p class="about-para">
-                        Hi, I’m Pranshul Pamecha – a Computer Science freshman at the University of Wisconsin-Madison. My journey started in Hong Kong, where I developed a passion for technology and coding, earning my IB Diploma.
-                    </p>
-                    <p class="about-para">
-                        I’m a self-taught programmer skilled in Python, Java, SQL, and R, with experience building text-based games, practical tools, and interactive software.
-                    </p>
-                    <p class="about-para">
-                        Beyond code, I design promotional materials for the UW-Madison chapter of H.YUVA and enjoy volleyball, sports debates, and supporting community initiatives.
-                    </p>
-                    <p class="about-cta">
-                        <a href="#contact" class="contact-link">Let’s Connect</a>
-                    </p>
-                </div>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <div class="logo">
+        <span class="logo-text">PRANSHUL</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#work">WORK</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#awards">AWARDS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <canvas id="matrixCanvas"></canvas>
+
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-tag" data-reveal>AI ENGINEER • FULL-STACK • REAL-TIME SYSTEMS</div>
+
+        <h1 class="hero-title" data-reveal>
+          <span class="line"><span class="word">PRANSHUL</span></span>
+          <span class="line"><span class="word glow-text">PAMECHA</span></span>
+        </h1>
+
+        <p class="hero-desc" data-reveal>
+          Building intelligent systems with real-time voice, vision, and scalable backends.
+          <br />Computer Science • UW–Madison
+        </p>
+
+        <div class="hero-btns" data-reveal>
+          <a href="#projects" class="btn-glow">Explore Work</a>
+          <a href="#contact" class="btn-outline">Connect</a>
+        </div>
+      </div>
+
+      <div class="hero-stats" data-reveal>
+        <div class="stat">
+          <div class="stat-num" data-count="2">0</div>
+          <div class="stat-label">On-going Projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="3.8">0</div>
+          <div class="stat-label">GPA</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="2025">0</div>
+          <div class="stat-label">Industry Experience</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-text">SCROLL</div>
+      <div class="scroll-bar"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left" data-reveal>
+          <div class="section-tag">WHO AM I</div>
+          <h2 class="section-title">
+            Building the <br /><span class="glow-text">Future</span>
+          </h2>
+
+          <p class="about-text">
+            I’m a Computer Science student at <strong>University of Wisconsin–Madison</strong> (GPA <strong>3.8</strong>)
+            specializing in AI-driven full-stack applications—especially real-time voice and vision systems.
+          </p>
+
+          <p class="about-text">
+            I previously worked as an <strong>AI Application Engineer</strong> at <strong>Advaiya Solutions</strong>,
+            building enterprise systems like insurance claim automation, construction progress verification,
+            and HR/IT voice agents.
+          </p>
+
+          <div class="about-meta">
+            <div class="meta-item">
+              <div class="meta-label">Education</div>
+              <div class="meta-value">UW–Madison</div>
             </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <div class="skills-container">
-            <h2 class="section-title">Tech Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3 class="skill-title">Programming Languages:</h3>
-                    <p class="skill-desc">Java</p>
-                    <p class="skill-desc">Python</p>
-                    <p class="skill-desc">R</p>
-                    <p class="skill-desc">SQL</p>
-                </div>
-                <div class="skill-card">
-                    <h3 class="skill-title">Software & Tools</h3>
-                    <p class="skill-desc">Excel</p>
-                    <p class="skill-desc">Word</p>
-                    <p class="skill-desc">PowerPoint</p>
-                    <p class="skill-desc">Canva</p>
-                    <p class="skill-desc">VideoEditor</p>
-                </div>
-                <div class="skill-card">
-                    <h3 class="skill-title">Languages</h3>
-                    <p class="skill-desc">Fluent in English, Hindi, French</p>
-                    <p class="skill-desc"></p>
-                    <p class="skill-desc">Conversant in Cantonese and Putonghua</p>
-                </div>
+            <div class="meta-item">
+              <div class="meta-label">Specialty</div>
+              <div class="meta-value">AI Systems</div>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="projects-container">
-            <h2 class="section-title">Tech Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3 class="project-title">Robotics Development</h3>
-                    <p class="project-desc">
-                        Designed and assisted with the programming of land and underwater robots, used C++ and block coding for inter-school and cross-region competitions, earning awards(in Awards section).
-                    </p>
-                    <a href="#" class="project-link">View Project</a>
-                </div>
-                <div class="project-card">
-                    <h3 class="project-title">Beginner-Level Games</h3>
-                    <p class="project-desc">
-                        Self-taught Python, created simple text-based games: Hangman, Guess the number. Created tax calculator using Java.
-                    </p>
-                    <a href="#" class="project-link">View Project</a>
-                </div>
-                <div class = "project-card">
-                    <h3 class="project-title">ShareMaps</h3>
-                    <p class="project-desc">
-                        Created a web application with basic UI that allows users to quickly generate and share Google Maps links for any address, using the Web Share API for easy mobile sharing.
-                    </p>
-                    <a href="#" class="project-link">View Project</a>
-                </div>
+            <div class="meta-item">
+              <div class="meta-label">Focus</div>
+              <div class="meta-value">Real-time</div>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Extracurricular Involvement & Volunteering Section (Bubble Format) -->
-    <section id="involvement" class="involvement-section">
-        <div class="involvement-container">
-            <h2 class="section-title">Extracurricular Involvement & Volunteering</h2>
-            <div class="involvement-bubbles">
-                <div class="involvement-bubble">
-                    <h3 class="involvement-title">Captain, Setter – PLKNPLC Volleyball Team</h3>
-                    <p class="involvement-subtitle">Hong Kong S.A.R. | Oct. 2018 - Jun. 2024</p>
-                </div>
-                <div class="involvement-bubble">
-                    <h3 class="involvement-title">President – PLKNPLC Multicultural Club</h3>
-                    <p class="involvement-subtitle">Hong Kong S.A.R. | Aug. 2022 - Sep. 2023</p>
-                </div>
-                <div class="involvement-bubble">
-                    <h3 class="involvement-title">Operation Chief – PLKNPLC Invention and STEAM Team</h3>
-                    <p class="involvement-subtitle">Hong Kong S.A.R. | Feb. 2021 - Jun. 2024</p>
-                </div>
-                <div class="involvement-bubble">
-                    <h3 class="involvement-title">Coder – Self-Learnt</h3>
-                    <p class="involvement-subtitle">Hong Kong S.A.R. | Mar. 2023 - Present</p>
-                </div>
-                <div class="involvement-bubble">
-                    <h3 class="involvement-title">Team Leader – HandsOn Hong Kong</h3>
-                    <p class="involvement-subtitle">Hong Kong S.A.R. | Jun. 2023 - Jun. 2024</p>
-                </div>
-                <div class="involvement-bubble">
-                    <h3 class="involvement-title">Student – Hong Kong Academy for Gifted Education</h3>
-                    <p class="involvement-subtitle">Hong Kong S.A.R. | Sep. 2021 - Sep. 2022</p>
-                </div>
-                <div class="involvement-bubble">
-                    <h3 class="involvement-title">Graphics Designer – UW-Madison chapter of HY</h3>
-                    <p class="involvement-subtitle">Madison, WI | Sep. 2024 - Present</p>
-                    <p class="involvement-desc">
-                </div>
+        <div class="about-right" data-reveal>
+          <div class="profile-card">
+            <div class="profile-top">
+              <div class="profile-pic">
+                <!-- Put your real image here: /Images/Pranshul.jpeg -->
+                <img id="profileImg" src="Images/Pranshul.jpeg" alt="Pranshul Pamecha" />
+              </div>
+              <div class="profile-info">
+                <div class="profile-name">Pranshul Pamecha</div>
+                <div class="profile-role">AI Engineer • Full-Stack</div>
+                <div class="profile-pill">UW–Madison</div>
+              </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Recognized Awards Section -->
-    <section id="awards" class="awards-section">
-        <div class="awards-container">
-            <h2 class="section-title">Recognized Awards</h2>
-            <div class="awards-grid">
-                <div class="award-card">
-                    <p class="award-desc">23rd Millennium Entrepreneurship Program (Top 30 Schools) | Mar. 2023</p>
+            <div class="skills-section">
+              <h3 class="skills-title">Tech Stack</h3>
+
+              <div class="skills-list">
+                <div class="skill-group">
+                  <div class="skill-group-title">Languages</div>
+                  <div class="skills-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                  </div>
                 </div>
-                <div class="award-card">
-                    <p class="award-desc">Hong Kong Home Affairs Department (Harmony Scholarship) | Mar. 2023</p>
+
+                <div class="skill-group">
+                  <div class="skill-group-title">AI / ML</div>
+                  <div class="skills-tags">
+                    <span class="skill-tag">Azure OpenAI</span>
+                    <span class="skill-tag">GPT-4.1 / 4o</span>
+                    <span class="skill-tag">YOLOv8</span>
+                    <span class="skill-tag">Hugging Face</span>
+                  </div>
                 </div>
-                <div class="award-card">
-                    <p class="award-desc">The Standard Newspaper (Harmony Scholarship Winners) | Mar. 2023</p>
+
+                <div class="skill-group">
+                  <div class="skill-group-title">Frameworks</div>
+                  <div class="skills-tags">
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">WebSockets</span>
+                    <span class="skill-tag">LangChain</span>
+                  </div>
                 </div>
-                <div class="award-card">
-                    <p class="award-desc">Hong Kong Outstanding Student Awards - YouthArch Foundation (Nominated by School) | May 2023</p>
+
+                <div class="skill-group">
+                  <div class="skill-group-title">Libraries / Tools</div>
+                  <div class="skills-tags">
+                    <span class="skill-tag">ReportLab</span>
+                    <span class="skill-tag">OpenCV</span>
+                    <span class="skill-tag">Pillow</span>
+                    <span class="skill-tag">Git/GitHub</span>
+                    <span class="skill-tag">Postman</span>
+                  </div>
                 </div>
-                <div class="award-card">
-                    <p class="award-desc">Robotics Intelligence DIY 2023 (Preliminary 3 Stars Award) | Jul. 2023</p>
-                </div>
-                <div class="award-card">
-                    <p class="award-desc">Robotics Intelligence DIY 2023 (Finals 9th Place) | Jul. 2023</p>
-                </div>
-                <div class="award-card">
-                    <p class="award-desc">Robotics Intelligence DIY 2023 (Best Challenge Spirit Award) | Jul. 2023</p>
-                </div>
-                <div class="award-card">
-                    <p class="award-desc">World Robotics Olympiad (National Preliminary 4th Place) | Aug. 2023</p>
-                </div>
-                <div class="award-card">
-                    <p class="award-desc">World Robotics Olympiad (National Finals First-Prize Award) | Sep. 2023</p>
-                </div>
-                <div class="award-card">
-                    <p class="award-desc">Deans List at UW-Madison (Fall 2024) | Dec. 2024</p>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <h2 class="section-title">Contact Me:</h2>
-            <div class="contact-info">
-                <p class="contact-detail">Email: <a href="mailto:pranshulpamecha06@gmail.com" class="contact-link">pranshulpamecha06@gmail.com</a></p>
-                <p class="contact-detail">LinkedIn (Click To Visit): <a href="https://www.linkedin.com/in/pranshul-pamecha-70a65221b/" class="contact-link">Pranshul Pamecha</a></p>
+  <!-- Work -->
+  <section id="work" class="work">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <div class="section-tag">EXPERIENCE</div>
+        <h2 class="section-title">Professional<br /><span class="glow-text">Journey</span></h2>
+      </div>
+
+      <div class="work-item" data-reveal>
+        <div class="work-number">01</div>
+        <div class="work-content">
+          <div class="work-header">
+            <div>
+              <h3 class="work-title">AI Application Engineer</h3>
+              <div class="work-company">Advaiya Solutions Inc. — India</div>
             </div>
-    </section>
+            <div class="work-date">Jul 2025 – Aug 2025</div>
+          </div>
 
+          <ul class="work-list">
+            <li>Built full-stack AI applications: SmartClaim AI, Archon AI, HR & IT Voice Agent</li>
+            <li>Delivered real-time image + voice analysis using scalable backend systems</li>
+            <li>Implemented streaming UX patterns (STT/TTS, interruption logic, validation pipelines)</li>
+          </ul>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p class="footer-text">© 2025 Pranshul Pamecha. All rights reserved.</p>
+          <div class="work-tags">
+            <span>Python</span><span>FastAPI</span><span>Flask</span><span>Azure OpenAI</span><span>WebSockets</span>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <div class="section-tag">PORTFOLIO</div>
+        <h2 class="section-title">Featured<br /><span class="glow-text">Projects</span></h2>
+      </div>
+
+      <div class="projects-list">
+        <div class="project-item" data-reveal>
+          <div class="project-header">
+            <div class="project-num">01</div>
+            <h3 class="project-title">HR & IT Voice Agent</h3>
+          </div>
+          <p class="project-desc">
+            Real-time AI voice assistant for onboarding, policies, benefits, and IT troubleshooting with continuous STT + low-latency TTS.
+          </p>
+          <ul class="project-features">
+            <li>Bi-directional WebSocket streaming</li>
+            <li>Token streaming + interruption logic</li>
+            <li>Noise reduction + semantic VAD</li>
+          </ul>
+          <div class="project-tags">
+            <span>FastAPI</span><span>WebSockets</span><span>Azure Speech</span><span>Azure OpenAI</span>
+          </div>
+        </div>
+
+        <div class="project-item" data-reveal>
+          <div class="project-header">
+            <div class="project-num">02</div>
+            <h3 class="project-title">SmartClaim AI</h3>
+          </div>
+          <p class="project-desc">
+            Automated insurance claim verification using multi-angle vehicle images with damage assessment, cost estimation, and PDF reporting.
+          </p>
+          <ul class="project-features">
+            <li>Part-wise damage + severity scoring</li>
+            <li>Structured PDF report generation</li>
+            <li>YOLOv8 model for internal usage</li>
+          </ul>
+          <div class="project-tags">
+            <span>Flask</span><span>OpenCV</span><span>ReportLab</span><span>YOLOv8</span>
+          </div>
+        </div>
+
+        <div class="project-item" data-reveal>
+          <div class="project-header">
+            <div class="project-num">03</div>
+            <h3 class="project-title">Archon AI</h3>
+          </div>
+          <p class="project-desc">
+            Construction progress verification system analyzing site images, detecting duplicates, validating against BOQ, and generating inspection reports.
+          </p>
+          <ul class="project-features">
+            <li>Multi-image validation + consistency checks</li>
+            <li>Phase-wise completion & defect flags</li>
+            <li>PDF inspection reports + recommendations</li>
+          </ul>
+          <div class="project-tags">
+            <span>Azure OpenAI</span><span>LangChain</span><span>PIL</span><span>ReportLab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards -->
+  <section id="awards" class="awards">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <div class="section-tag">ACHIEVEMENTS</div>
+        <h2 class="section-title">Awards &<br /><span class="glow-text">Recognition</span></h2>
+      </div>
+
+      <div class="awards-grid">
+        <div class="award-card" data-reveal>
+          <div class="award-year">2024–25</div>
+          <h3 class="award-title">Dean’s List</h3>
+          <p class="award-desc">UW–Madison (Fall 2024 & Spring 2025)</p>
+        </div>
+
+        <div class="award-card" data-reveal>
+          <div class="award-year">2023</div>
+          <h3 class="award-title">Harmony Scholarship</h3>
+          <p class="award-desc">Hong Kong Home Affairs Department</p>
+        </div>
+
+        <div class="award-card" data-reveal>
+          <div class="award-year">2023</div>
+          <h3 class="award-title">WRO National Finals — First Prize</h3>
+          <p class="award-desc">World Robotics Olympiad</p>
+        </div>
+
+        <div class="award-card" data-reveal>
+          <div class="award-year">2023</div>
+          <h3 class="award-title">Speech Festival Champion</h3>
+          <p class="award-desc">Hong Kong Schools Speech Festival</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-content" data-reveal>
+        <div class="section-tag">GET IN TOUCH</div>
+        <h2 class="section-title">Let’s Build<br /><span class="glow-text">Something</span></h2>
+
+        <p class="contact-text">
+          Open to internships, AI engineering roles, and collaborations.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:pranshulpamecha06@gmail.com" class="contact-link">
+            <span class="link-icon">→</span>
+            <span class="link-text">pranshulpamecha06@gmail.com</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/pranshul-pamecha/" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <span class="link-icon">→</span>
+            <span class="link-text">linkedin.com/in/pranshul-pamecha</span>
+          </a>
+
+          <a href="https://github.com/Pranshul-13" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <span class="link-icon">→</span>
+            <span class="link-text">github.com/Pranshul-13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>© 2025 Pranshul Pamecha • Designed & built with precision</p>
+        <div class="footer-links">
+          <a href="https://github.com/Pranshul-13" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/pranshul-pamecha/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:pranshulpamecha06@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
-
