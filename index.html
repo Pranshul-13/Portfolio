@@ -3,453 +3,709 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pranshul Pamecha — AI Engineer</title>
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#f2f2f2" />
+  <meta name="description" content="Pranshul Pamecha — AI and full-stack engineer. Computer Science at UW–Madison. Real-time voice systems, computer vision, and adaptive learning infrastructure." />
+  <meta name="author" content="Pranshul Pamecha" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pranshul Pamecha — AI &amp; Full-Stack Engineer" />
+  <meta property="og:description" content="Computer Science at UW–Madison. Real-time voice systems, computer vision, and adaptive learning infrastructure." />
+
+  <title>Pranshul Pamecha — AI &amp; Full-Stack Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,500;100,600;100,700;125,900&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f2f2f2'/%3E%3Ctext x='50' y='72' font-family='Helvetica,Arial,sans-serif' font-size='68' font-weight='900' text-anchor='middle' fill='%23000'%3EP%3C/text%3E%3C/svg%3E" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Loading Screen -->
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-inner">
-      <div class="loader-text">PP</div>
-      <div class="loader-sub">Loading portfolio…</div>
-    </div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ===================== Mobile top bar ===================== -->
+  <div class="topbar">
+    <a href="#top" class="tb-name">Pranshul Pamecha</a>
+    <button class="tb-toggle" id="navToggle" aria-expanded="false" aria-controls="sidebar">Menu</button>
   </div>
 
-  <!-- Cursor -->
-  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <!-- ===================== Fixed sidebar ===================== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-head">
+      <a href="#top" class="sb-name">Pranshul Pamecha</a>
+      <div class="sb-role">AI &amp; Full-Stack Engineer</div>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-content">
-      <div class="logo">
-        <span class="logo-text">PRANSHUL</span>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#work">WORK</a></li>
-        <li><a href="#projects">PROJECTS</a></li>
-        <li><a href="#awards">AWARDS</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <canvas id="matrixCanvas"></canvas>
-
-    <div class="hero-container">
-      <div class="hero-content">
-        <div class="hero-tag" data-reveal>AI ENGINEER • FULL-STACK • REAL-TIME SYSTEMS</div>
-
-        <h1 class="hero-title" data-reveal>
-          <span class="line"><span class="word">PRANSHUL</span></span>
-          <span class="line"><span class="word glow-text">PAMECHA</span></span>
-        </h1>
-
-        <p class="hero-desc" data-reveal>
-          Building intelligent systems with real-time voice, vision, and scalable backends.
-          <br />Computer Science • UW–Madison • GPA: 3.8
-          <br />Sept 2024 – May 2028
-        </p>
-
-        <div class="hero-btns" data-reveal>
-          <a href="#projects" class="btn-glow">Explore Work</a>
-          <a href="#contact" class="btn-outline">Connect</a>
-        </div>
+      <div class="sb-meta">
+        <div>Madison, Wisconsin</div>
+        <div><a href="mailto:pranshulpamecha06@gmail.com">pranshulpamecha06@gmail.com</a></div>
       </div>
 
-      <div class="hero-stats" data-reveal>
-        <div class="stat">
-          <div class="stat-num" data-count="7">0</div>
-          <div class="stat-label">Projects</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num" data-count="3.8">0</div>
-          <div class="stat-label">GPA</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num" data-count="3">0</div>
-          <div class="stat-label">Dean's List Semesters</div>
-        </div>
+      <div class="avail"><span class="dot" aria-hidden="true"></span> Open to 2027 internships</div>
+    </div>
+
+    <nav class="sb-nav" aria-label="Primary">
+      <div class="sb-group">
+        <a href="#about" class="sb-link" data-nav="about"><span class="sb-num">01</span> About</a>
+        <a href="#experience" class="sb-link" data-nav="experience"><span class="sb-num">02</span> Experience</a>
+        <a href="#work" class="sb-link" data-nav="work"><span class="sb-num">03</span> Work</a>
+        <a href="#awards" class="sb-link" data-nav="awards"><span class="sb-num">04</span> Awards</a>
+        <a href="#background" class="sb-link" data-nav="background"><span class="sb-num">05</span> Background</a>
+        <a href="#contact" class="sb-link" data-nav="contact"><span class="sb-num">06</span> Contact</a>
       </div>
-    </div>
 
-    <div class="scroll-hint" aria-hidden="true">
-      <div class="scroll-text">SCROLL</div>
-      <div class="scroll-bar"></div>
-    </div>
-  </section>
+      <div class="sb-group">
+        <a href="Pranshul-Pamecha-Resume.pdf" target="_blank" rel="noopener" class="sb-link"><span class="sb-num">07</span> Résumé</a>
+        <a href="https://github.com/Pranshul-13" target="_blank" rel="noopener noreferrer" class="sb-link"><span class="sb-num">08</span> GitHub</a>
+        <a href="https://www.linkedin.com/in/pranshul-pamecha/" target="_blank" rel="noopener noreferrer" class="sb-link"><span class="sb-num">09</span> LinkedIn</a>
+      </div>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-left" data-reveal>
-          <div class="section-tag">WHO AM I</div>
-          <h2 class="section-title">
-            Building the <br /><span class="glow-text">Future</span>
-          </h2>
+      <div class="sb-foot">© <span id="year">2026</span> Pranshul Pamecha</div>
+    </nav>
+  </aside>
 
-          <p class="about-text">
-            I’m a Computer Science student at <strong>University of Wisconsin–Madison</strong> (GPA <strong>3.8</strong>)
-            specializing in AI-driven full-stack applications—real-time voice systems, event-driven architectures, and scalable backends.
+  <main id="main">
+    <!-- ===================== Hero ===================== -->
+    <section id="top" class="hero">
+      <div class="wrap">
+        <h1 class="display d-hero hero-title" data-reveal>Pranshul Pamecha</h1>
+
+        <div class="hero-lower">
+          <p class="lede hero-lede" data-reveal>
+            Building AI systems that hold up outside a notebook.
           </p>
 
-          <p class="about-text">
-            I previously worked as an <strong>AI Application Engineer</strong> at <strong>Advaiya Solutions</strong>,
-            designing scalable backend services with Python, FastAPI, and Flask to support real-time AI applications
-            including RESTful APIs and WebSocket-based streaming services.
-          </p>
-
-          <p class="about-text about-courses">
-            <strong>Key Courses:</strong> Data Structures & Algorithms I & II, Linear Algebra, Machine Org. & Programming, Intro to AI, Intro to Databases
-          </p>
-
-          <div class="about-meta">
-            <div class="meta-item">
-              <div class="meta-label">Education</div>
-              <div class="meta-value">UW–Madison</div>
-            </div>
-            <div class="meta-item">
-              <div class="meta-label">Specialty</div>
-              <div class="meta-value">AI Systems</div>
-            </div>
-            <div class="meta-item">
-              <div class="meta-label">Focus</div>
-              <div class="meta-value">Real-time</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-right" data-reveal>
-          <div class="profile-card">
-            <div class="profile-top">
-              <div class="profile-pic">
-                <!-- Put your real image here: /Images/Pranshul.jpeg -->
-                <img id="profileImg" src="Images/Pranshul.jpeg" alt="Pranshul Pamecha" />
-              </div>
-              <div class="profile-info">
-                <div class="profile-name">Pranshul Pamecha</div>
-                <div class="profile-role">AI Engineer • Full-Stack</div>
-                <div class="profile-pill">UW–Madison</div>
+          <div class="hero-facts" data-reveal>
+            <div class="fact-row">
+              <div class="label">Education</div>
+              <div class="fact-val">University of Wisconsin–Madison
+                <span>B.S. Computer Science · 2024–2028 · GPA 3.82</span>
               </div>
             </div>
-
-            <div class="skills-section">
-              <h3 class="skills-title">Tech Stack</h3>
-
-              <div class="skills-list">
-                <div class="skill-group">
-                  <div class="skill-group-title">Languages</div>
-                  <div class="skills-tags">
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">C</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">R</span>
-                  </div>
-                </div>
-
-                <div class="skill-group">
-                  <div class="skill-group-title">Frameworks & Platforms</div>
-                  <div class="skills-tags">
-                    <span class="skill-tag">FastAPI</span>
-                    <span class="skill-tag">Flask</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Next.js</span>
-                    <span class="skill-tag">WebSockets</span>
-                    <span class="skill-tag">REST APIs</span>
-                  </div>
-                </div>
-
-                <div class="skill-group">
-                  <div class="skill-group-title">Databases & Tools</div>
-                  <div class="skills-tags">
-                    <span class="skill-tag">Firestore</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">Git/GitHub</span>
-                    <span class="skill-tag">Postman</span>
-                    <span class="skill-tag">Chrome Extensions API</span>
-                  </div>
-                </div>
-
-                <div class="skill-group">
-                  <div class="skill-group-title">AI & ML (Applied)</div>
-                  <div class="skills-tags">
-                    <span class="skill-tag">LLM Integration</span>
-                    <span class="skill-tag">Streaming Inference</span>
-                    <span class="skill-tag">Feature Engineering</span>
-                    <span class="skill-tag">Risk Scoring Models</span>
-                  </div>
-                </div>
+            <div class="fact-row">
+              <div class="label">Currently</div>
+              <div class="fact-val">Research Assistant, People and Robots Lab
+                <span>Founder, QuickLearn</span>
+              </div>
+            </div>
+            <div class="fact-row">
+              <div class="label">Focus</div>
+              <div class="fact-val">Applied ML &amp; real-time systems
+                <span>Computer vision · LLM pipelines · Full-stack</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Work -->
-  <section id="work" class="work">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <div class="section-tag">EXPERIENCE</div>
-        <h2 class="section-title">Professional<br /><span class="glow-text">Journey</span></h2>
+    <!-- ===================== Stats ===================== -->
+    <section aria-label="Selected results">
+      <div class="wrap">
+        <div class="stats">
+          <div class="stat" data-reveal>
+            <div class="stat-num">58%</div>
+            <div class="stat-label">Voice-assistant latency reduction</div>
+          </div>
+          <div class="stat" data-reveal>
+            <div class="stat-num">0.86</div>
+            <div class="stat-label">YOLOv8 mAP@0.5, held-out test set</div>
+          </div>
+          <div class="stat" data-reveal>
+            <div class="stat-num">14ms</div>
+            <div class="stat-label">p95 knowledge-tracing inference</div>
+          </div>
+          <div class="stat" data-reveal>
+            <div class="stat-num">35</div>
+            <div class="stat-label">QuickLearn beta users</div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="work-item" data-reveal>
-        <div class="work-number">01</div>
-        <div class="work-content">
-          <div class="work-header">
+    <!-- ===================== About ===================== -->
+    <section id="about" class="band">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div class="sec-eyebrow">
+            <span class="label label-accent">01</span>
+            <span class="label">About</span>
+          </div>
+          <h2 class="display d-section">Engineering past the demo</h2>
+        </div>
+
+        <div class="about-grid">
+          <div data-reveal>
+            <img class="portrait" src="Images/Pranshul.jpeg" alt="Pranshul Pamecha" loading="lazy" width="132" height="132" />
+
+            <p class="body-text">
+              I'm a Computer Science undergraduate at the University of Wisconsin–Madison, carrying
+              a 3.82 GPA with four Dean's List semesters. My interest is narrower than "AI" in
+              general — I care about the engineering that makes a model useful once it leaves the
+              training loop: evaluation you can trust, latency you can measure, and interfaces
+              people actually use.
+            </p>
+            <p class="body-text">
+              At the People and Robots Laboratory I build the LLM pipeline and full-stack platform
+              behind an approved 50-user language-learning study, including responsible-AI checks
+              and an offline test suite that runs full regressions in under a minute at zero API
+              cost. Separately I founded <strong>QuickLearn</strong>, an adaptive SAT prep platform
+              with a real-time knowledge-tracing service and a leakage-safe evaluation pipeline.
+            </p>
+            <p class="body-text">
+              Before that I was an Application Engineer Intern at Advaiya Solutions, working on a
+              vehicle claim-assessment prototype and cutting agentic voice-assistant latency by 58%.
+            </p>
+          </div>
+
+          <div class="spec-list" data-reveal>
+            <div class="spec">
+              <div class="label">Programming languages</div>
+              <div class="spec-val">Java · Python · JavaScript / TypeScript · SQL · C · R</div>
+            </div>
+            <div class="spec">
+              <div class="label">Spoken languages</div>
+              <div class="spec-val">English, Hindi, and French (proficient) · Cantonese (GCSE) · Mandarin (elementary)</div>
+            </div>
+            <div class="spec">
+              <div class="label">Frameworks</div>
+              <div class="spec-val">React · Next.js · Node.js · Express · FastAPI · Flask · REST APIs · WebSockets</div>
+            </div>
+            <div class="spec">
+              <div class="label">AI &amp; Machine Learning</div>
+              <div class="spec-val">PyTorch · ONNX Runtime · YOLOv8 · scikit-learn · Google Gemini · Azure OpenAI · Computer Vision · NLP · Responsible AI</div>
+            </div>
+            <div class="spec">
+              <div class="label">Cloud &amp; Infrastructure</div>
+              <div class="spec-val">Git · Supabase / Postgres · MongoDB · Docker · Azure · Cloudflare Pages · Render · Git-based CI/CD</div>
+            </div>
+            <div class="spec">
+              <div class="label">Coursework</div>
+              <div class="chips">
+                <span class="chip">Data Structures &amp; Algorithms I &amp; II</span>
+                <span class="chip">Machine Organization &amp; Programming</span>
+                <span class="chip">Theoretical AI</span>
+                <span class="chip">Databases</span>
+                <span class="chip">Linear Algebra</span>
+                <span class="chip">Probability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Experience (light) ===================== -->
+    <section id="experience" class="band">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div class="sec-eyebrow">
+            <span class="label label-accent">02</span>
+            <span class="label">Experience</span>
+            <span class="sec-count">Three roles</span>
+          </div>
+          <h2 class="display d-section">Experience</h2>
+        </div>
+
+        <!-- PRL -->
+        <article class="entry" data-reveal>
+          <div class="entry-top">
+            <span class="label label-accent">E/01</span>
+            <span class="label">People and Robots Laboratory</span>
+          </div>
+          <h3 class="display d-item entry-title">Research Assistant</h3>
+          <p class="entry-sub">Building the LLM pipeline and platform behind an approved 50-user language-learning study.</p>
+
+          <div class="entry-grid">
+            <div class="entry-meta">
+              <div class="meta-block">
+                <div class="label">Dates</div>
+                <div class="meta-val">Apr 2026 — Present</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Location</div>
+                <div class="meta-val">Madison, WI</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Role</div>
+                <div class="meta-val">Undergraduate Research Assistant</div>
+              </div>
+            </div>
+
             <div>
-              <h3 class="work-title">AI Application Engineer</h3>
-              <div class="work-company">Advaiya Solutions Inc. — India</div>
+              <ul class="bullets">
+                <li>Engineered a 4-stage LLM question-generation pipeline (Gemini) converting practice conversations into a validated fill-in-the-blank question bank, enforcing responsible-AI safeguards — answer-leak, duplicate, and banned-answer checks — through a 3× revise-and-refilter loop.</li>
+                <li>Designed the pipeline around dependency-injected LLM and logger interfaces, with an offline verification suite of 3 mock-LLM harnesses, 30 invariants, and 8 Jest tests that cuts full regression runs to <strong>under a minute at zero API cost</strong>.</li>
+                <li>Built an adaptive review engine on MongoDB ranking vocabulary by per-word error rate and exposure history, surfacing high-value review terms each session and re-queuing until mastery.</li>
+                <li>Developing the full-stack English-to-Chinese spoken-practice platform (React, Node.js/Express, MongoDB, JWT) behind an approved <strong>50-user, 20-session study</strong>, with adaptive Gemini session APIs and a 30-minute auto-submitting timed assessment.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span><span class="tag">Gemini</span><span class="tag">Jest</span><span class="tag">Responsible AI</span>
+              </div>
             </div>
-            <div class="work-date">Jul 2025 – Aug 2025</div>
+          </div>
+        </article>
+
+        <!-- Advaiya -->
+        <article class="entry" data-reveal>
+          <div class="entry-top">
+            <span class="label label-accent">E/03</span>
+            <span class="label">Advaiya Solutions Inc.</span>
+          </div>
+          <h3 class="display d-item entry-title">Application Engineer</h3>
+          <p class="entry-sub">Three client-facing AI systems in eight weeks — vehicle claim assessment, real-time voice support, and construction progress tracking.</p>
+
+          <div class="entry-grid">
+            <div class="entry-meta">
+              <div class="meta-block">
+                <div class="label">Dates</div>
+                <div class="meta-val">Jul 2025 — Aug 2025</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Location</div>
+                <div class="meta-val">Udaipur, India</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Role</div>
+                <div class="meta-val">Application Engineer Intern</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Shipped</div>
+                <div class="meta-val">SmartClaim AI · Archon AI · HR &amp; IT Voice Agent</div>
+              </div>
+            </div>
+
+            <div>
+              <ul class="bullets">
+                <li>Reduced end-to-end agentic voice-assistant response latency by <strong>58%</strong> through concurrent WebSocket streaming, incremental audio playback, and token-level LLM response handling.</li>
+                <li>Co-engineered a cross-functional claim-review automation workflow with the engineering lead and product stakeholders, iterating through daily scrums and twice-weekly reviews; internal testing showed manual verification time cut by <strong>over 90%</strong>.</li>
+                <li>Engineered repair-cost estimation logic and Approve / Flag / Reject decision rules for a vehicle claim-assessment prototype, validating estimates against historical claim bills at <strong>94% accuracy</strong> in limited client testing.</li>
+                <li>Trained and evaluated a YOLOv8 vehicle-damage detection prototype on 4,500 annotated images, reaching <strong>0.86 mAP@0.5</strong> and 0.84 precision on a 500-image held-out test set; presented results company-wide.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">YOLOv8</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">Azure OpenAI</span><span class="tag">LangChain</span><span class="tag">Azure Speech SDK</span>
+              </div>
+
+              <div class="systems">
+                <div class="system">
+                  <div class="system-top">
+                    <h4 class="system-name">SmartClaim AI</h4>
+                    <span class="label">Vision</span>
+                  </div>
+                  <p class="system-desc">Analyses multi-angle vehicle images to automate insurance claim verification — detecting part-specific damage, scoring severity, and estimating repair costs. Generates structured PDF reports with part-wise breakdowns and Approve / Flag / Reject recommendations.</p>
+                  <div class="system-stack">Python · Flask · YOLOv8 · JavaScript</div>
+                </div>
+
+                <div class="system">
+                  <div class="system-top">
+                    <h4 class="system-name">HR &amp; IT Support Voice Agent</h4>
+                    <span class="label">Real-time</span>
+                  </div>
+                  <p class="system-desc">A real-time voice assistant handling onboarding, leave requests, policy clarification, and IT troubleshooting. Continuous STT with low-latency TTS over bi-directional WebSocket streaming, token streaming with interruption logic so users can cut in mid-response, plus noise reduction, echo cancellation, and semantic VAD for noisy offices. This is the system behind the 58% latency reduction.</p>
+                  <div class="system-stack">Python · FastAPI · WebSocket · Azure Speech SDK · Azure OpenAI</div>
+                </div>
+
+                <div class="system">
+                  <div class="system-top">
+                    <h4 class="system-name">Archon AI</h4>
+                    <span class="label">Vision · LLM</span>
+                  </div>
+                  <p class="system-desc">Tracks construction-site progress across build phases from site photography. Multi-image validation flags duplicates and inconsistencies and verifies against the Bill of Quantities; automated PDF inspection reports cover phase-wise completion, defect detection, risks, and next steps, with checks against Indian construction codes.</p>
+                  <div class="system-stack">Python · Flask · Azure OpenAI · LangChain · ReportLab · PIL</div>
+                </div>
+
+                <div class="system">
+                  <div class="system-top">
+                    <h4 class="system-name">Solar Panel Condition Monitoring</h4>
+                    <span class="label">Vision</span>
+                  </div>
+                  <p class="system-desc">Inspection API that analyses solar-array imagery for cracks, hotspots, wiring faults, and misalignment. Multi-image analysis with a consistency checker for panels from the same site, producing severity levels, prioritised repair actions, and structured PDF reports tagged with installation ID, location, and timestamp.</p>
+                  <div class="system-stack">Python · Flask · Azure OpenAI GPT-4o Vision · LangChain · ReportLab · PIL</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== QuickLearn (dark band) ===================== -->
+    <section class="band band-dark" data-dark>
+      <div class="wrap">
+        <article class="entry" data-reveal>
+          <div class="entry-top">
+            <span class="label label-accent">E/02</span>
+            <span class="label">Founder · Jun 2026 — Present</span>
+          </div>
+          <h3 class="display d-item entry-title">QuickLearn</h3>
+          <p class="entry-sub">An adaptive SAT prep platform that routes each student toward the practice that moves them most.</p>
+
+          <div class="entry-grid">
+            <div class="entry-meta">
+              <div class="meta-block">
+                <div class="label">Role</div>
+                <div class="meta-val">Founder — product, ML, and infrastructure</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Status</div>
+                <div class="meta-val">Live · 35 beta users</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Stack</div>
+                <div class="meta-val">Next.js · Supabase · PyTorch · ONNX Runtime · FastAPI · Cloudflare Workers</div>
+              </div>
+            </div>
+
+            <div>
+              <ul class="bullets">
+                <li>Launched the platform (Next.js, Supabase/Postgres, Cloudflare Workers, Git-based CI/CD) to <strong>35 beta users</strong> recruited at random through social media, delivering ~11% larger weak-skill mastery gains and routing ~30% more practice toward weak skills than non-adaptive drilling.</li>
+                <li>Shipped a real-time knowledge-tracing service (PyTorch → ONNX Runtime, FastAPI on Render) scoring per-domain mastery at <strong>p95 14 ms</strong> across 8 forward passes per request, with IRT-3PL and K-Means priors cold-starting students who have no history.</li>
+                <li>Modelled students in three layers — rules-based personas, K-Means archetypes, and a deep <strong>Transformer knowledge-tracing model</strong> — each surfacing its own panel in the student dashboard, over a Postgres schema spanning 18 migrations.</li>
+                <li>Built a leakage-safe evaluation pipeline over 101k+ simulated item attempts with chronological 70/15/15 splits, reaching <strong>0.607 AUC</strong> against a 0.730 oracle ceiling — 83.2% of achievable.</li>
+                <li>Authored a 1,610-question bank spanning 8 domains and 29 subskills via an LLM-assisted generation pipeline (Azure OpenAI + matplotlib figures), calibrated with IRT-3PL difficulty parameters.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">PyTorch</span><span class="tag">ONNX Runtime</span><span class="tag">FastAPI</span><span class="tag">IRT-3PL</span><span class="tag">K-Means</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== Work ===================== -->
+    <section id="work" class="band">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div class="sec-eyebrow">
+            <span class="label label-accent">03</span>
+            <span class="label">Selected work</span>
+            <span class="sec-count">Two featured</span>
+          </div>
+          <h2 class="display d-section">Work</h2>
+        </div>
+
+        <!-- NutriSnap -->
+        <article class="entry" data-reveal>
+          <div class="entry-top">
+            <span class="label label-accent">W/01</span>
+            <span class="label">Google Cheesehacks 2026</span>
+          </div>
+          <h3 class="display d-item entry-title">NutriSnap</h3>
+          <p class="entry-sub">Nutrition tracker that helps students hit macro goals from dining-hall menus.</p>
+
+          <div class="entry-grid">
+            <div class="entry-meta">
+              <div class="meta-block">
+                <div class="label">Year</div>
+                <div class="meta-val">2026</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Scale</div>
+                <div class="meta-val">21 endpoints · 50+ users</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Result</div>
+                <div class="meta-val">Menu load 1.8s → ~0.1s</div>
+              </div>
+            </div>
+
+            <div>
+              <ul class="bullets">
+                <li>Built a <strong>21-endpoint REST API</strong> (Node.js, Express, Supabase) with a Gemini-vision pipeline that identifies dishes from a photo and auto-fills macros from verified menu data rather than model estimates.</li>
+                <li>Added a macro-aware dining-hall recommender weighing macro targets, fitness goals, dietary restrictions, and recent history.</li>
+                <li>Deployed on Render and Cloudflare Pages for 50+ users, cutting menu load <strong>94%</strong> by fetching six dining halls concurrently with fault isolation, warming an in-memory cache on startup, and deduplicating items across halls.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Supabase</span><span class="tag">Gemini Vision</span><span class="tag">Cloudflare Pages</span>
+              </div>
+              <div class="entry-links">
+                <a href="https://nutrisnap-60w.pages.dev/" target="_blank" rel="noopener noreferrer" class="arrow-link">
+                  <span>Live app</span>
+                  <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- WeTrack -->
+        <article class="entry" data-reveal>
+          <div class="entry-top">
+            <span class="label label-accent">W/02</span>
+            <span class="label">Chrome Extension · MV3 · Began at MadHacks 2025</span>
+          </div>
+          <h3 class="display d-item entry-title">WeTrack</h3>
+          <p class="entry-sub">Surfaces your own procrastination loops from browsing patterns.</p>
+
+          <div class="entry-grid">
+            <div class="entry-meta">
+              <div class="meta-block">
+                <div class="label">Year</div>
+                <div class="meta-val">2025</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Model</div>
+                <div class="meta-val">Zero-shot DistilBERT · 5-8-1 MLP</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Result</div>
+                <div class="meta-val">Zero runtime ML dependencies</div>
+              </div>
+            </div>
+
+            <div>
+              <ul class="bullets">
+                <li>Built an MV3 event-driven capture layer (service worker, alarms, idle detection) that logs activity without polling and survives service-worker termination.</li>
+                <li>Fed that stream into a <strong>zero-shot DistilBERT classifier</strong> (FastAPI) labelling visits work vs. distraction with no per-site training data.</li>
+                <li>Prototyped an on-device alternative to the rule-based risk scorer: a 5-8-1 PyTorch MLP trained on 3,000 synthetic sessions, weights exported to JSON and inference reimplemented in vanilla JavaScript. Kept the more accurate and interpretable heuristic.</li>
+                <li>Shipped a React + TypeScript dashboard for live risk scores, browsing summaries, and historical trends.</li>
+              <li>Started life as <em>recurr</em> at MadHacks 2025 — a weekend prototype that detected recurring distraction loops and predicted upcoming risk windows. Rebuilt since around the MV3 capture layer and a proper evaluation of the classifier against the heuristic.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Chrome MV3</span><span class="tag">DistilBERT</span><span class="tag">PyTorch</span><span class="tag">FastAPI</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Earlier work -->
+        <div class="sec-eyebrow" style="margin-top:72px" data-reveal>
+          <span class="label label-accent">+</span>
+          <span class="label">Earlier work</span>
+        </div>
+
+        <div class="card-grid" data-reveal>
+          <article class="card">
+            <div class="card-top">
+              <h3 class="card-title">BadgerExchange</h3>
+              <span class="label">2025</span>
+            </div>
+            <p class="card-desc">Campus marketplace gated to verified @wisc.edu accounts. Tagged listings, direct messaging between buyers and sellers, a trending page, and a personalised feed that ranks listings against your past interactions and message history.</p>
+            <div class="tags" style="margin-top:0"><span class="tag">Next.js</span><span class="tag">Firebase</span><span class="tag">Firestore</span><span class="tag">Genkit</span></div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <h3 class="card-title">ShareMaps</h3>
+              <span class="label">2024</span>
+            </div>
+            <p class="card-desc">A small utility that turns a typed address into a shareable Google Maps link, published as a static GitHub Pages app.</p>
+            <a href="https://pranshul-13.github.io/ShareMaps/" target="_blank" rel="noopener noreferrer" class="arrow-link">
+              <span>Live app</span>
+              <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg>
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <h3 class="card-title">Repositories</h3>
+              <span class="label">Ongoing</span>
+            </div>
+            <p class="card-desc">Smaller experiments, coursework, and works in progress live on GitHub.</p>
+            <a href="https://github.com/Pranshul-13" target="_blank" rel="noopener noreferrer" class="arrow-link">
+              <span>GitHub</span>
+              <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Awards (dark band) ===================== -->
+    <section id="awards" class="band band-dark" data-dark>
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div class="sec-eyebrow">
+            <span class="label label-accent">04</span>
+            <span class="label">Recognition</span>
+          </div>
+          <h2 class="display d-section">Awards</h2>
+        </div>
+
+        <div class="award-list">
+          <article class="award" data-reveal>
+            <div class="label">2024 — 2026</div>
+            <h3 class="award-title">Dean's List, four semesters</h3>
+            <p class="award-desc">University of Wisconsin–Madison, College of Letters &amp; Science. Awarded for sustained academic standing across four semesters.</p>
+          </article>
+
+          <article class="award" data-reveal>
+            <div class="label">Feb 2026</div>
+            <h3 class="award-title">Google Cheesehacks 2026</h3>
+            <p class="award-desc">Placed 19th of 110 teams at UW–Madison's flagship hackathon for NutriSnap.</p>
+          </article>
+
+          <article class="award" data-reveal>
+            <div class="label">Sep 2023</div>
+            <h3 class="award-title">World Robotics Olympiad — National first prize</h3>
+            <p class="award-desc">First place at the Hong Kong national finals, after placing 4th in the national preliminary round in August.</p>
+          </article>
+
+          <article class="award" data-reveal>
+            <div class="label">Dec 2022</div>
+            <h3 class="award-title">CTEA Cup Robotics — First place</h3>
+            <p class="award-desc">Creative Technology Robotic Competition, 16th CTEA Cup. Designed, built, and programmed land and underwater robots.</p>
+          </article>
+
+          <article class="award" data-reveal>
+            <div class="label">Mar 2023</div>
+            <h3 class="award-title">Harmony Scholarship</h3>
+            <p class="award-desc">Awarded by the Hong Kong Home Affairs Department, recognising contribution to ethnic-minority community service. Covered by The Standard.</p>
+          </article>
+
+          <article class="award" data-reveal>
+            <div class="label">Feb — Mar 2023</div>
+            <h3 class="award-title">Territory-wide speech champion, twice</h3>
+            <p class="award-desc">Champion across Hong Kong at the 74th Hong Kong Schools Speech Festival, and at the 12th Hong Kong French Speech Competition.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Background ===================== -->
+    <section id="background" class="band">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div class="sec-eyebrow">
+            <span class="label label-accent">05</span>
+            <span class="label">Before Madison</span>
+          </div>
+          <h2 class="display d-section">Background</h2>
+        </div>
+
+        <div class="about-grid">
+          <div data-reveal>
+            <p class="body-text">
+              I grew up in Hong Kong and finished secondary school there in 2024 with an
+              IB diploma score of <strong>42/45</strong>, then moved to Wisconsin. Before university my
+              technical work was robotics — designing, building, and programming land and
+              underwater robots, which took a national first prize at the World Robotics Olympiad
+              in 2023. I taught myself Python in early 2023, starting with the usual text-based
+              games and a URL-to-QR-code tool.
+            </p>
+            <p class="body-text">
+              My first piece of independent research was the IB <strong>Extended Essay</strong> in
+              Economics — a 4,000-word investigation carried out over roughly a year, with a
+              self-chosen research question, primary and secondary data collection, and a defended
+              conclusion. It's the closest thing I did before university to the research work I do
+              now at the People and Robots Laboratory: pick a question, decide what evidence would
+              actually answer it, then go and get it.
+            </p>
+            <p class="body-text">
+              Outside the lab I ran a small home-tutoring service from 2017, teaching 30+ children
+              aged 8–16 including students with additional learning needs. That's a large part of
+              why adaptive learning is the problem I keep returning to — QuickLearn is the same
+              question with better tooling: what should this particular student practise next?
+            </p>
+            <p class="body-text">
+              I volunteered for two years with Fredie Hung Ethnic Minority Services, distributing
+              2,000+ masks, sanitisers, and supplies to over 500 low-income residents during the
+              pandemic, and ran cultural presentations for local community centres. I also led
+              collection teams for HandsOn Hong Kong and Breadline. A reference letter from the
+              organisation's director is available on request.
+            </p>
           </div>
 
-          <ul class="work-list">
-            <li>Designed and built scalable backend services using Python, FastAPI, and Flask to support real-time AI applications</li>
-            <li>Developed RESTful APIs and WebSocket-based streaming services enabling low-latency image and voice processing</li>
-            <li>Implemented modular, maintainable codebases following OOP and clean architecture principles</li>
-            <li>Collaborated cross-functionally to translate ambiguous client requirements into production-ready systems</li>
-          </ul>
-
-          <div class="work-tags">
-            <span>Python</span><span>FastAPI</span><span>Flask</span><span>WebSockets</span><span>REST APIs</span>
+          <div class="spec-list" data-reveal>
+            <div class="spec">
+              <div class="label">Secondary school</div>
+              <div class="spec-val">Hong Kong · 2020 – 2024<br />International Baccalaureate, 42/45</div>
+            </div>
+            <div class="spec">
+              <div class="label">Independent research</div>
+              <div class="spec-val">Extended Essay in Economics — 4,000-word independent research paper, IB Diploma</div>
+            </div>
+            <div class="spec">
+              <div class="label">Standardised testing</div>
+              <div class="spec-val">SAT Math 790 — useful context for building an SAT prep platform</div>
+            </div>
+            <div class="spec">
+              <div class="label">Robotics</div>
+              <div class="spec-val">World Robotics Olympiad national first prize · CTEA Cup first place · Operations chief, school robotics and STEAM programme</div>
+            </div>
+            <div class="spec">
+              <div class="label">Teaching</div>
+              <div class="spec-val">Ran a home-tutoring service from 2017 · 30+ students aged 8–16, including SEN students</div>
+            </div>
+            <div class="spec">
+              <div class="label">Community</div>
+              <div class="spec-val">Fredie Hung Ethnic Minority Services · HandsOn Hong Kong · Breadline · UNICEF school committee</div>
+            </div>
+            <div class="spec">
+              <div class="label">Also</div>
+              <div class="spec-val">Black belt, Hong Kong Amateur Martial Arts Association · Violin and piano, 6 years · Volleyball captain</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <div class="section-tag">PORTFOLIO</div>
-        <h2 class="section-title">Featured &amp;<br /><span class="glow-text">Public Projects</span></h2>
-      </div>
+    <!-- ===================== Contact (dark band) ===================== -->
+    <section id="contact" class="band band-dark" data-dark>
+      <div class="wrap">
+        <div class="sec-eyebrow" data-reveal>
+          <span class="label label-accent">06</span>
+          <span class="label">Contact</span>
+        </div>
 
-      <div class="projects-list">
-        <div class="project-item" data-reveal>
-          <div class="project-header">
-            <div class="project-num">2025</div>
-            <h3 class="project-title">HR & IT Support Voice Agent</h3>
-            <span class="project-badge">Advaiya</span>
+        <h2 class="display d-section contact-title" data-reveal>
+          <a href="mailto:pranshulpamecha06@gmail.com">Say hello</a>
+        </h2>
+
+        <div class="contact-grid">
+          <div data-reveal>
+            <p class="body-text">
+              I'm open to 2027 internships in AI engineering, applied ML, and full-stack
+              development, as well as research collaborations. Happy to talk through any of the
+              work above.
+            </p>
+            <div class="contact-actions">
+              <a href="mailto:pranshulpamecha06@gmail.com" class="btn">
+                <span>Send an email</span>
+                <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <button class="btn btn-line" id="copyEmail" data-email="pranshulpamecha06@gmail.com">
+                <span id="copyEmailText">Copy address</span>
+              </button>
+            </div>
           </div>
-          <p class="project-desc">
-            Fault-tolerant, real-time AI voice agent for HR and IT support automation, integrated with Azure Speech Services.
-          </p>
-          <ul class="project-features">
-            <li>Continuous AI-driven speech pipelines for streaming STT and TTS with real-time interruption handling</li>
-            <li>Optimized end-to-end AI inference latency from ~900ms to ~380ms through async processing and token-level streaming</li>
-            <li>Delivered evals for benchmark transcription accuracy, latency, and interruption handling</li>
-          </ul>
-          <div class="project-tags">
-            <span>FastAPI</span><span>WebSockets</span><span>Azure Speech</span><span>Azure OpenAI</span>
+
+          <div class="contact-rows" data-reveal>
+            <a href="mailto:pranshulpamecha06@gmail.com" class="contact-row">
+              <span class="label">Email</span>
+              <span class="contact-val">pranshulpamecha06@gmail.com</span>
+            </a>
+            <a href="tel:+12534108306" class="contact-row">
+              <span class="label">Phone</span>
+              <span class="contact-val">+1 (253) 410-8306</span>
+            </a>
+            <a href="https://www.linkedin.com/in/pranshul-pamecha/" target="_blank" rel="noopener noreferrer" class="contact-row">
+              <span class="label">LinkedIn</span>
+              <span class="contact-val">linkedin.com/in/pranshul-pamecha</span>
+            </a>
+            <a href="https://github.com/Pranshul-13" target="_blank" rel="noopener noreferrer" class="contact-row">
+              <span class="label">GitHub</span>
+              <span class="contact-val">github.com/Pranshul-13</span>
+            </a>
+            <a href="Pranshul-Pamecha-Resume.pdf" target="_blank" rel="noopener" class="contact-row">
+              <span class="label">Résumé</span>
+              <span class="contact-val">Pranshul-Pamecha-Resume.pdf</span>
+            </a>
           </div>
         </div>
 
-        <div class="project-item" data-reveal>
-          <div class="project-header">
-            <div class="project-num">2025</div>
-            <h3 class="project-title">WeTrack — Behavior Tracking & Risk Analysis</h3>
-            <span class="project-badge">Personal</span>
-          </div>
-          <p class="project-desc">
-            Event-driven, AI-enabled Chrome extension capturing user behavior across 10+ browser event types (tabs, idle, focus, navigation).
-          </p>
-          <ul class="project-features">
-            <li>Streaming AI feature pipeline transforming raw activity logs into time-windowed behavioral vectors</li>
-            <li>AI-driven risk scoring model using weighted behavioral signals, time-decay functions, and session-level aggregation</li>
-            <li>React + TypeScript analytics dashboard for real-time behavioral insights and historical risk trends</li>
-          </ul>
-          <div class="project-tags">
-            <span>React</span><span>TypeScript</span><span>Chrome Extensions API</span><span>AI/ML</span>
-          </div>
-        </div>
-
-        <div class="project-item" data-reveal>
-          <div class="project-header">
-            <div class="project-num">2025</div>
-            <h3 class="project-title">BadgerExchange — Campus Marketplace</h3>
-            <span class="project-badge">Startup Team</span>
-          </div>
-          <p class="project-desc">
-            Full-stack web platform using Next.js App Router with modular feature domains (listings, messaging, profiles, settings).
-          </p>
-          <ul class="project-features">
-            <li>Authentication-gated user workflows using Firebase Auth with secure access control</li>
-            <li>Firestore data models and queries enabling category-based filtering across 20+ listings</li>
-            <li>Developing a personalized, AI-inspired content feed with reusable UI and state abstractions</li>
-          </ul>
-          <div class="project-tags">
-            <span>Next.js</span><span>Firebase Auth</span><span>Firestore</span><span>React</span>
-          </div>
-        </div>
-
-        <div class="project-item" data-reveal>
-          <div class="project-header">
-            <div class="project-num">2026</div>
-            <h3 class="project-title">NutriSnap — Dining Hall Nutrition Tracker</h3>
-            <span class="project-badge">Cheesehacks 2026</span>
-          </div>
-          <p class="project-desc">
-            Mobile-first React app: snap your tray, get nutrition info, and track macros with live dining hall menus and personalized recommendations.
-          </p>
-          <ul class="project-features">
-            <li>Full-stack with separate frontend (React 19 + Vite) and backend API</li>
-            <li>Live dining hall menu integration with macro tracking</li>
-            <li>Personalized nutrition recommendations with authenticated user sessions</li>
-          </ul>
-          <div class="project-tags">
-            <span>React</span><span>Vite</span><span>REST API</span><span>Node.js</span>
-          </div>
-          <div class="project-links">
-            <a href="https://nutrisnap-60w.pages.dev/" target="_blank" rel="noopener noreferrer" class="project-link">Live App →</a>
-          </div>
-        </div>
-
-        <div class="project-item" data-reveal>
-          <div class="project-header">
-            <div class="project-num">2025</div>
-            <h3 class="project-title">Task Manager &mdash; CodeCircuit Hackathon</h3>
-            <span class="project-badge">Hackathon</span>
-          </div>
-          <p class="project-desc">
-            Responsive productivity app built during a 48-hour hackathon to manage tasks with clean, device-friendly interactions.
-          </p>
-          <ul class="project-features">
-            <li>Built the frontend with modular HTML, CSS, and JavaScript for fast iteration with a small team</li>
-            <li>Implemented light and dark mode toggling with adaptive layouts across screen sizes</li>
-            <li>Focused the UI around quick task capture, readable state changes, and low-friction daily use</li>
-          </ul>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span>
-          </div>
-        </div>
-
-        <div class="project-item" data-reveal>
-          <div class="project-header">
-            <div class="project-num">2024</div>
-            <h3 class="project-title">ShareMaps &mdash; Location Sharing Utility</h3>
-            <span class="project-badge">Public App</span>
-          </div>
-          <p class="project-desc">
-            JavaScript utility that turns a typed address into a shareable Google Maps link for fast communication across installed apps.
-          </p>
-          <ul class="project-features">
-            <li>Integrated Google Maps URL generation from user-entered address data</li>
-            <li>Designed a lightweight flow for copying or sharing location links from a browser</li>
-            <li>Published as a static GitHub Pages project for direct public access</li>
-          </ul>
-          <div class="project-tags">
-            <span>JavaScript</span><span>Google Maps</span><span>GitHub Pages</span><span>Web APIs</span>
-          </div>
-          <div class="project-links">
-            <a href="https://pranshul-13.github.io/ShareMaps/" target="_blank" rel="noopener noreferrer" class="project-link">Live App &rarr;</a>
-          </div>
-        </div>
-
-        <div class="project-item" data-reveal>
-          <div class="project-header">
-            <div class="project-num">2022</div>
-            <h3 class="project-title">Early Programming Portfolio</h3>
-            <span class="project-badge">Archive</span>
-          </div>
-          <p class="project-desc">
-            Early web and programming projects from high school, including a personal showcase site and a text-based Hangman game.
-          </p>
-          <ul class="project-features">
-            <li>Created a portfolio website to organize awards, leadership roles, projects, and academic milestones</li>
-            <li>Built a Hangman game with word selection, input validation, game-state tracking, and win/loss handling</li>
-            <li>Used these projects to establish core habits around readable code, iteration, and user-facing presentation</li>
-          </ul>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Awards -->
-  <section id="awards" class="awards">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <div class="section-tag">ACHIEVEMENTS</div>
-        <h2 class="section-title">Awards &<br /><span class="glow-text">Recognition</span></h2>
-      </div>
-
-      <div class="awards-grid">
-        <div class="award-card" data-reveal>
-          <div class="award-year">2024–25</div>
-          <h3 class="award-title">Dean’s List</h3>
-          <p class="award-desc">UW–Madison (Fall ‘24, Spring ‘25, Fall ‘25)</p>
-        </div>
-
-        <div class="award-card" data-reveal>
-          <div class="award-year">2023</div>
-          <h3 class="award-title">Harmony Scholarship</h3>
-          <p class="award-desc">Hong Kong Home Affairs Department</p>
+        <div class="colophon">
+          <span>© <span id="yearFoot">2026</span> Pranshul Pamecha</span>
+          <span>Designed &amp; built from scratch · Madison, WI</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="contact-content" data-reveal>
-        <div class="section-tag">GET IN TOUCH</div>
-        <h2 class="section-title">Let’s Build<br /><span class="glow-text">Something</span></h2>
-
-        <p class="contact-text">
-          Open to internships, AI engineering roles, and collaborations.
-        </p>
-
-        <div class="contact-links">
-          <a href="mailto:pranshulpamecha06@gmail.com" class="contact-link">
-            <span class="link-icon">→</span>
-            <span class="link-text">pranshulpamecha06@gmail.com</span>
-          </a>
-
-          <a href="https://www.linkedin.com/in/pranshul-pamecha/" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <span class="link-icon">→</span>
-            <span class="link-text">linkedin.com/in/pranshul-pamecha</span>
-          </a>
-
-          <a href="https://github.com/Pranshul-13" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <span class="link-icon">→</span>
-            <span class="link-text">github.com/Pranshul-13</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <p>© 2025 Pranshul Pamecha • Designed & built with precision</p>
-        <div class="footer-links">
-          <a href="https://github.com/Pranshul-13" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/pranshul-pamecha/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:pranshulpamecha06@gmail.com">Email</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
