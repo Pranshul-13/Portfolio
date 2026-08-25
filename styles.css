@@ -536,6 +536,117 @@ section { scroll-margin-top: 0; }
 }
 
 /* --------------------------------------------------------------------------
+   Animated figures
+   -------------------------------------------------------------------------- */
+
+.figure {
+  margin-top: 34px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 26px 28px 30px;
+}
+
+.figure-cap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-bottom: 13px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.figure svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+.fig-t {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  fill: var(--ink-3);
+}
+
+.fig-n {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.fig-s {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  fill: var(--ink-2);
+}
+
+.fig-line   { stroke: var(--rule); stroke-width: 1; fill: none; }
+.fig-solid  { fill: var(--ink); }
+.fig-accent { fill: var(--accent); }
+.fig-ghost  { fill: var(--rule); }
+.fig-astroke{ stroke: var(--accent); stroke-width: 1.5; fill: none; }
+
+/* Grow horizontally from the left */
+@keyframes figGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Grow upward from the baseline */
+@keyframes figRise { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* Fade + settle */
+@keyframes figIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* Packet travelling left to right */
+@keyframes figFlow {
+  0%   { transform: translateX(0);            opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateX(var(--dist, 100px)); opacity: 0; }
+}
+
+/* Draw a stroked path */
+@keyframes figDraw { to { stroke-dashoffset: 0; } }
+
+.anim-grow,
+.anim-rise,
+.anim-in,
+.anim-flow { transform-box: fill-box; }
+
+.anim-grow { transform-origin: left center; transform: scaleX(0); }
+.anim-rise { transform-origin: center bottom; transform: scaleY(0); }
+.anim-in   { opacity: 0; }
+.anim-draw { stroke-dasharray: var(--len, 200); stroke-dashoffset: var(--len, 200); }
+
+[data-reveal].is-visible .anim-grow {
+  animation: figGrow 0.85s var(--ease) both;
+  animation-delay: var(--d, 0s);
+}
+[data-reveal].is-visible .anim-rise {
+  animation: figRise 0.7s var(--ease) both;
+  animation-delay: var(--d, 0s);
+}
+[data-reveal].is-visible .anim-in {
+  animation: figIn 0.6s var(--ease) both;
+  animation-delay: var(--d, 0s);
+}
+[data-reveal].is-visible .anim-draw {
+  animation: figDraw 1s var(--ease) both;
+  animation-delay: var(--d, 0s);
+}
+[data-reveal].is-visible .anim-flow {
+  animation: figFlow 2.4s linear infinite;
+  animation-delay: var(--d, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-grow, .anim-rise { transform: none; }
+  .anim-in { opacity: 1; }
+  .anim-draw { stroke-dashoffset: 0; }
+  [data-reveal].is-visible .anim-flow { animation: none; opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
    Stat rail
    -------------------------------------------------------------------------- */
 

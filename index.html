@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light" />
   <meta name="theme-color" content="#f2f2f2" />
-  <meta name="description" content="Pranshul Pamecha — AI and full-stack engineer. Computer Science at UW–Madison. Real-time voice systems, computer vision, and adaptive learning infrastructure." />
+  <meta name="description" content="Pranshul Pamecha - AI and full-stack engineer. Computer Science at UW–Madison. Real-time voice systems, computer vision, and adaptive learning infrastructure." />
   <meta name="author" content="Pranshul Pamecha" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Pranshul Pamecha — AI &amp; Full-Stack Engineer" />
+  <meta property="og:title" content="Pranshul Pamecha - AI &amp; Full-Stack Engineer" />
   <meta property="og:description" content="Computer Science at UW–Madison. Real-time voice systems, computer vision, and adaptive learning infrastructure." />
 
-  <title>Pranshul Pamecha — AI &amp; Full-Stack Engineer</title>
+  <title>Pranshul Pamecha - AI &amp; Full-Stack Engineer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,7 +74,7 @@
 
         <div class="hero-lower">
           <p class="lede hero-lede" data-reveal>
-            Building AI systems that hold up outside a notebook.
+ Building AI systems that hold up outside a notebook.
           </p>
 
           <div class="hero-facts" data-reveal>
@@ -141,22 +141,22 @@
             <img class="portrait" src="Images/Pranshul.jpeg" alt="Pranshul Pamecha" loading="lazy" width="132" height="132" />
 
             <p class="body-text">
-              I'm a Computer Science undergraduate at the University of Wisconsin–Madison, carrying
-              a 3.82 GPA with four Dean's List semesters. My interest is narrower than "AI" in
-              general — I care about the engineering that makes a model useful once it leaves the
-              training loop: evaluation you can trust, latency you can measure, and interfaces
-              people actually use.
+ I'm a Computer Science undergraduate at the University of Wisconsin–Madison, carrying
+ a 3.82 GPA with four Dean's List semesters. My interest is narrower than "AI" in
+ general - I care about the engineering that makes a model useful once it leaves the
+ training loop: evaluation you can trust, latency you can measure, and interfaces
+ people actually use.
             </p>
             <p class="body-text">
-              At the People and Robots Laboratory I build the LLM pipeline and full-stack platform
-              behind an approved 50-user language-learning study, including responsible-AI checks
-              and an offline test suite that runs full regressions in under a minute at zero API
-              cost. Separately I founded <strong>QuickLearn</strong>, an adaptive SAT prep platform
-              with a real-time knowledge-tracing service and a leakage-safe evaluation pipeline.
+ At the People and Robots Laboratory I build the LLM pipeline and full-stack platform
+ behind an approved 50-user language-learning study, including responsible-AI checks
+ and an offline test suite that runs full regressions in under a minute at zero API
+ cost. Separately I founded <strong>QuickLearn</strong>, an adaptive SAT prep platform
+ with a real-time knowledge-tracing service and a leakage-safe evaluation pipeline.
             </p>
             <p class="body-text">
-              Before that I was an Application Engineer Intern at Advaiya Solutions, working on a
-              vehicle claim-assessment prototype and cutting agentic voice-assistant latency by 58%.
+ Before that I was an Application Engineer Intern at Advaiya Solutions, working on a
+ vehicle claim-assessment prototype and cutting agentic voice-assistant latency by 58%.
             </p>
           </div>
 
@@ -222,7 +222,7 @@
             <div class="entry-meta">
               <div class="meta-block">
                 <div class="label">Dates</div>
-                <div class="meta-val">Apr 2026 — Present</div>
+                <div class="meta-val">Apr 2026 - Present</div>
               </div>
               <div class="meta-block">
                 <div class="label">Location</div>
@@ -236,14 +236,92 @@
 
             <div>
               <ul class="bullets">
-                <li>Engineered a 4-stage LLM question-generation pipeline (Gemini) converting practice conversations into a validated fill-in-the-blank question bank, enforcing responsible-AI safeguards — answer-leak, duplicate, and banned-answer checks — through a 3× revise-and-refilter loop.</li>
-                <li>Designed the pipeline around dependency-injected LLM and logger interfaces, with an offline verification suite of 3 mock-LLM harnesses, 30 invariants, and 8 Jest tests that cuts full regression runs to <strong>under a minute at zero API cost</strong>.</li>
-                <li>Built an adaptive review engine on MongoDB ranking vocabulary by per-word error rate and exposure history, surfacing high-value review terms each session and re-queuing until mastery.</li>
-                <li>Developing the full-stack English-to-Chinese spoken-practice platform (React, Node.js/Express, MongoDB, JWT) behind an approved <strong>50-user, 20-session study</strong>, with adaptive Gemini session APIs and a 30-minute auto-submitting timed assessment.</li>
+                <li>Turning free-form practice conversations into a usable question bank is mostly a validation problem, not a generation one. The pipeline runs in four stages with Gemini, then filters hard: questions whose stem leaks the answer, near-duplicates, and banned answers all get caught and sent back through a revise-and-refilter loop up to three times. What survives is the bank.</li>
+                <li>The whole thing is built against injected LLM and logger interfaces rather than calling the API directly, which sounds like ceremony until you need to test it. Three mock-LLM harnesses, 30 invariants, and 8 Jest tests give a <strong>full regression run in under a minute at zero API cost</strong>, so the safeguards get exercised on every change instead of whenever someone remembers to burn tokens.</li>
+                <li>Built the adaptive review engine on MongoDB. Vocabulary is ranked by per-word error rate and exposure history, so the terms that surface each session are the ones actually costing the learner something, and words re-queue until they stick rather than being retired after one correct answer.</li>
+                <li>Building the full-stack English-to-Chinese spoken-practice platform (React, Node.js/Express, MongoDB, JWT) behind an approved <strong>50-user, 20-session study</strong>, with adaptive Gemini session APIs and a 30-minute timed assessment that auto-submits so every participant's data is collected under identical conditions.</li>
               </ul>
               <div class="tags">
                 <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span><span class="tag">Gemini</span><span class="tag">Jest</span><span class="tag">Responsible AI</span>
               </div>
+
+              <figure class="figure">
+                <figcaption class="figure-cap">
+                  <span class="label">Question generation, four stages and three gates</span>
+                  <span class="label">Same pipeline runs offline</span>
+                </figcaption>
+                <svg viewBox="0 0 720 250" role="img" aria-label="Practice conversations pass through four generation stages, then three validation gates for answer leak, duplicates, and banned answers. Rejected candidates loop back to be revised and refiltered up to three times. Because the language model is injected, the identical pipeline runs against mock harnesses offline in under a minute at zero API cost.">
+                  <text class="fig-t" x="0" y="10">Live</text>
+
+                  <rect class="fig-line anim-in" style="--d:.05s" x="0" y="24" width="112" height="42" />
+                  <text class="fig-s" x="12" y="43">practice</text>
+                  <text class="fig-s" x="12" y="58">conversation</text>
+
+                  <line class="fig-line anim-draw" style="--len:24;--d:.2s" x1="112" y1="45" x2="136" y2="45" />
+
+                  <g>
+                    <rect class="fig-line anim-in" style="--d:.25s" x="140" y="24" width="34" height="42" />
+                    <rect class="fig-line anim-in" style="--d:.32s" x="180" y="24" width="34" height="42" />
+                    <rect class="fig-line anim-in" style="--d:.39s" x="220" y="24" width="34" height="42" />
+                    <rect class="fig-line anim-in" style="--d:.46s" x="260" y="24" width="34" height="42" />
+                    <text class="fig-s" x="150" y="50">01</text>
+                    <text class="fig-s" x="190" y="50">02</text>
+                    <text class="fig-s" x="230" y="50">03</text>
+                    <text class="fig-s" x="270" y="50">04</text>
+                  </g>
+                  <text class="fig-s" x="140" y="82">Gemini, four stages</text>
+
+                  <line class="fig-line anim-draw" style="--len:24;--d:.55s" x1="294" y1="45" x2="318" y2="45" />
+                  <circle class="fig-accent anim-flow" style="--dist:20px;--d:1s" cx="296" cy="45" r="3" />
+
+                  <g>
+                    <rect class="fig-line anim-in" style="--d:.6s"  x="322" y="6"  width="156" height="24" />
+                    <rect class="fig-line anim-in" style="--d:.68s" x="322" y="34" width="156" height="24" />
+                    <rect class="fig-line anim-in" style="--d:.76s" x="322" y="62" width="156" height="24" />
+                    <text class="fig-s" x="334" y="22">answer leak</text>
+                    <text class="fig-s" x="334" y="50">near-duplicate</text>
+                    <text class="fig-s" x="334" y="78">banned answer</text>
+                  </g>
+
+                  <line class="fig-line anim-draw" style="--len:26;--d:.85s" x1="478" y1="45" x2="504" y2="45" />
+
+                  <rect class="fig-line anim-in" style="--d:.9s" x="508" y="24" width="212" height="42" />
+                  <text class="fig-n" x="520" y="43">Validated bank</text>
+                  <text class="fig-s" x="520" y="59">fill-in-the-blank</text>
+
+                  <!-- revise and refilter loop, returns to the head of the pipeline -->
+                  <path class="fig-astroke anim-draw" style="--len:400;--d:1s"
+                        d="M400,86 L400,120 L124,120 L124,45" stroke-dasharray="4 3" />
+                  <text class="fig-s" x="140" y="138">rejected: revise and refilter, up to 3 times</text>
+
+                  <line class="fig-line" x1="0" y1="160" x2="720" y2="160" />
+
+                  <text class="fig-t" x="0" y="182">Offline, same code path</text>
+
+                  <rect class="fig-line anim-in" style="--d:.15s" x="0" y="194" width="124" height="42" />
+                  <text class="fig-s" x="12" y="213">3 mock-LLM</text>
+                  <text class="fig-s" x="12" y="228">harnesses</text>
+
+                  <line class="fig-line anim-draw" style="--len:72;--d:.3s" x1="124" y1="215" x2="196" y2="215" />
+                  <text class="fig-s" x="133" y="207">injected</text>
+
+                  <rect class="fig-line anim-in" style="--d:.4s" x="200" y="194" width="140" height="42" />
+                  <text class="fig-s" x="212" y="220">same four stages</text>
+
+                  <line class="fig-line anim-draw" style="--len:36;--d:.55s" x1="340" y1="215" x2="376" y2="215" />
+
+                  <rect class="fig-line anim-in" style="--d:.65s" x="380" y="194" width="170" height="42" />
+                  <text class="fig-s" x="392" y="213">30 invariants</text>
+                  <text class="fig-s" x="392" y="228">8 Jest tests</text>
+
+                  <line class="fig-line anim-draw" style="--len:36;--d:.8s" x1="550" y1="215" x2="586" y2="215" />
+
+                  <rect class="fig-line anim-in" style="--d:.9s" x="590" y="194" width="130" height="42" />
+                  <text class="fig-n" x="602" y="213">under a minute</text>
+                  <text class="fig-s" x="602" y="229">zero API cost</text>
+                  <rect class="fig-accent anim-grow" style="--d:1.1s" x="590" y="238" width="130" height="3" />
+                </svg>
+              </figure>
             </div>
           </div>
         </article>
@@ -255,13 +333,13 @@
             <span class="label">Advaiya Solutions Inc.</span>
           </div>
           <h3 class="display d-item entry-title">Application Engineer</h3>
-          <p class="entry-sub">Three client-facing AI systems in eight weeks — vehicle claim assessment, real-time voice support, and construction progress tracking.</p>
+          <p class="entry-sub">Three client-facing AI systems in eight weeks - vehicle claim assessment, real-time voice support, and construction progress tracking.</p>
 
           <div class="entry-grid">
             <div class="entry-meta">
               <div class="meta-block">
                 <div class="label">Dates</div>
-                <div class="meta-val">Jul 2025 — Aug 2025</div>
+                <div class="meta-val">Jul 2025 - Aug 2025</div>
               </div>
               <div class="meta-block">
                 <div class="label">Location</div>
@@ -279,11 +357,50 @@
 
             <div>
               <ul class="bullets">
-                <li>Reduced end-to-end agentic voice-assistant response latency by <strong>58%</strong> through concurrent WebSocket streaming, incremental audio playback, and token-level LLM response handling.</li>
-                <li>Co-engineered a cross-functional claim-review automation workflow with the engineering lead and product stakeholders, iterating through daily scrums and twice-weekly reviews; internal testing showed manual verification time cut by <strong>over 90%</strong>.</li>
-                <li>Engineered repair-cost estimation logic and Approve / Flag / Reject decision rules for a vehicle claim-assessment prototype, validating estimates against historical claim bills at <strong>94% accuracy</strong> in limited client testing.</li>
-                <li>Trained and evaluated a YOLOv8 vehicle-damage detection prototype on 4,500 annotated images, reaching <strong>0.86 mAP@0.5</strong> and 0.84 precision on a 500-image held-out test set; presented results company-wide.</li>
+                <li>The voice agent felt broken at roughly 900 ms because the pipeline was strictly sequential: wait for the full transcript, wait for the full completion, synthesise all the audio, then play it. Restructuring it so each stage starts on the first useful token from the previous one, and letting playback begin before synthesis finishes, cut end-to-end response to about 380 ms. A <strong>58% reduction</strong>, and enough that people stopped talking over it.</li>
+                <li>Added interruption handling on top of that, which the streaming design made possible. Because audio is played incrementally rather than as one buffer, a user speaking mid-answer can cut the agent off the way they would a person. Noise reduction, echo cancellation, and semantic voice-activity detection keep it usable in an open office.</li>
+                <li>Built repair-cost estimation and the Approve / Flag / Reject decision rules for the vehicle claim prototype, then validated the estimates against historical claim bills rather than against my own expectations, landing at <strong>94% accuracy</strong> in limited client testing.</li>
+                <li>Trained and evaluated a YOLOv8 vehicle-damage detector on 4,500 annotated images, reaching <strong>0.86 mAP@0.5</strong> and 0.84 precision on a 500-image held-out test set, and presented the results company-wide.</li>
+                <li>Worked the requirements side as much as the code, with the engineering lead and product stakeholders through daily scrums and twice-weekly reviews. Internal testing put the reduction in manual verification time at <strong>over 90%</strong>.</li>
               </ul>
+
+              <figure class="figure">
+                <figcaption class="figure-cap">
+                  <span class="label">Voice pipeline, before and after</span>
+                  <span class="label">~900 ms &rarr; ~380 ms</span>
+                </figcaption>
+                <svg viewBox="0 0 720 190" role="img" aria-label="Before, the voice pipeline ran four stages sequentially for about 900 milliseconds. After, the stages overlap and response begins at about 380 milliseconds.">
+                  <text class="fig-t" x="0" y="12">Sequential</text>
+                  <text class="fig-n" x="640" y="13">~900 ms</text>
+                  <g>
+                    <rect class="fig-ghost anim-grow" style="--d:.05s" x="0" y="22" width="150" height="22" />
+                    <rect class="fig-ghost anim-grow" style="--d:.2s" x="154" y="22" width="270" height="22" />
+                    <rect class="fig-ghost anim-grow" style="--d:.35s" x="428" y="22" width="160" height="22" />
+                    <rect class="fig-ghost anim-grow" style="--d:.5s" x="592" y="22" width="128" height="22" />
+                  </g>
+                  <text class="fig-s" x="4" y="58">STT</text>
+                  <text class="fig-s" x="158" y="58">LLM, full completion</text>
+                  <text class="fig-s" x="432" y="58">TTS</text>
+                  <text class="fig-s" x="596" y="58">play</text>
+
+                  <line class="fig-line" x1="0" y1="82" x2="720" y2="82" />
+
+                  <text class="fig-t" x="0" y="106">Streamed and overlapped</text>
+                  <text class="fig-n" x="640" y="107">~380 ms</text>
+                  <g>
+                    <rect class="fig-solid anim-grow" style="--d:.6s" x="0" y="116" width="96" height="16" />
+                    <rect class="fig-solid anim-grow" style="--d:.72s" x="44" y="136" width="150" height="16" />
+                    <rect class="fig-solid anim-grow" style="--d:.84s" x="150" y="156" width="120" height="16" />
+                    <rect class="fig-accent anim-grow" style="--d:.96s" x="230" y="156" width="74" height="16" />
+                  </g>
+                  <text class="fig-s" x="102" y="129">STT, incremental</text>
+                  <text class="fig-s" x="200" y="149">LLM, token by token</text>
+                  <text class="fig-s" x="312" y="169">TTS and playback, concurrent</text>
+
+                  <line class="fig-astroke anim-draw" style="--len:70;--d:1.1s" x1="304" y1="112" x2="304" y2="178" stroke-dasharray="3 3" />
+                  <circle class="fig-accent anim-flow" style="--dist:300px;--d:1.3s" cx="4" cy="182" r="3" />
+                </svg>
+              </figure>
               <div class="tags">
                 <span class="tag">YOLOv8</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">Azure OpenAI</span><span class="tag">LangChain</span><span class="tag">Azure Speech SDK</span>
               </div>
@@ -294,7 +411,7 @@
                     <h4 class="system-name">SmartClaim AI</h4>
                     <span class="label">Vision</span>
                   </div>
-                  <p class="system-desc">Analyses multi-angle vehicle images to automate insurance claim verification — detecting part-specific damage, scoring severity, and estimating repair costs. Generates structured PDF reports with part-wise breakdowns and Approve / Flag / Reject recommendations.</p>
+                  <p class="system-desc">Analyses multi-angle vehicle images to automate insurance claim verification - detecting part-specific damage, scoring severity, and estimating repair costs. Generates structured PDF reports with part-wise breakdowns and Approve / Flag / Reject recommendations.</p>
                   <div class="system-stack">Python · Flask · YOLOv8 · JavaScript</div>
                 </div>
 
@@ -337,7 +454,7 @@
         <article class="entry" data-reveal>
           <div class="entry-top">
             <span class="label label-accent">E/02</span>
-            <span class="label">Founder · Jun 2026 — Present</span>
+            <span class="label">Founder · Jun 2026 - Present</span>
           </div>
           <h3 class="display d-item entry-title">QuickLearn</h3>
           <p class="entry-sub">An adaptive SAT prep platform that routes each student toward the practice that moves them most.</p>
@@ -346,7 +463,7 @@
             <div class="entry-meta">
               <div class="meta-block">
                 <div class="label">Role</div>
-                <div class="meta-val">Founder — product, ML, and infrastructure</div>
+                <div class="meta-val">Founder - product, ML, and infrastructure</div>
               </div>
               <div class="meta-block">
                 <div class="label">Status</div>
@@ -360,15 +477,78 @@
 
             <div>
               <ul class="bullets">
-                <li>Launched the platform (Next.js, Supabase/Postgres, Cloudflare Workers, Git-based CI/CD) to <strong>35 beta users</strong> recruited at random through social media, delivering ~11% larger weak-skill mastery gains and routing ~30% more practice toward weak skills than non-adaptive drilling.</li>
-                <li>Shipped a real-time knowledge-tracing service (PyTorch → ONNX Runtime, FastAPI on Render) scoring per-domain mastery at <strong>p95 14 ms</strong> across 8 forward passes per request, with IRT-3PL and K-Means priors cold-starting students who have no history.</li>
-                <li>Modelled students in three layers — rules-based personas, K-Means archetypes, and a deep <strong>Transformer knowledge-tracing model</strong> — each surfacing its own panel in the student dashboard, over a Postgres schema spanning 18 migrations.</li>
-                <li>Built a leakage-safe evaluation pipeline over 101k+ simulated item attempts with chronological 70/15/15 splits, reaching <strong>0.607 AUC</strong> against a 0.730 oracle ceiling — 83.2% of achievable.</li>
-                <li>Authored a 1,610-question bank spanning 8 domains and 29 subskills via an LLM-assisted generation pipeline (Azure OpenAI + matplotlib figures), calibrated with IRT-3PL difficulty parameters.</li>
+                <li>The hard part of adaptive practice isn't showing questions, it's knowing what a student actually knows. QuickLearn models that in three layers that hand off to each other as evidence accumulates: a rules engine sorts new students into one of six personas, K-Means++ with power-iteration PCA places them against the cohort, and once there are enough attempts a Transformer takes over. Each layer owns a panel on the dashboard, so the student can see which one is currently driving their recommendations.</li>
+                <li>The knowledge-tracing model is a 4-layer, 8-head Transformer with two prediction heads: one estimates whether the next question in a given domain will be answered correctly, the other emits a per-domain mastery vector. Raw model confidence is badly calibrated, so an isotonic regression stage sits on the output and turns scores into probabilities that mean what they say.</li>
+                <li>Serving it honestly was the interesting constraint. The model trains in PyTorch, exports to ONNX at opset 18 with a dynamic batch axis, and is served by FastAPI behind a bearer token, with the artifact in object storage and a partial unique index in Postgres guaranteeing exactly one active model version. Reads go cache first, then live inference, then a cluster prior, so if the sidecar is unreachable the dashboard degrades to a worse answer instead of an error.</li>
+                <li>Evaluation was built to be hard to fool. Windows are split chronologically per student, 70/15/15, so the model is never scored on a question it has effectively already seen. Across 101k+ simulated attempts that gives <strong>0.607 AUC</strong> against a 0.730 oracle ceiling, which is 83.2% of what was actually achievable on this data. Reporting the ceiling alongside the score matters more to me than reporting the score.</li>
+                <li>Around the model sit the pieces that make it a product: a 3PL IRT calibration layer, multi-stage test routing, an SM-2 derived review scheduler, a score projection from theta, and a mistake taxonomy that separates a genuine concept gap from a slip, a rush, a trap answer, or simple decay. 1,610 questions across 8 domains and 29 subskills, all IRT-calibrated.</li>
+                <li>Shipped to <strong>35 beta users</strong> recruited at random through social media, delivering ~11% larger weak-skill mastery gains and routing ~30% more practice toward weak skills than non-adaptive drilling.</li>
               </ul>
               <div class="tags">
-                <span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">PyTorch</span><span class="tag">ONNX Runtime</span><span class="tag">FastAPI</span><span class="tag">IRT-3PL</span><span class="tag">K-Means</span>
+                <span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Supabase</span><span class="tag">PyTorch</span><span class="tag">ONNX Runtime</span><span class="tag">FastAPI</span><span class="tag">IRT-3PL</span><span class="tag">Cloudflare Workers</span>
               </div>
+
+              <figure class="figure">
+                <figcaption class="figure-cap">
+                  <span class="label">Student model, three layers</span>
+                  <span class="label">Cache &rarr; live &rarr; prior</span>
+                </figcaption>
+                <svg viewBox="0 0 720 250" role="img" aria-label="Attempt history flows into a Transformer knowledge-tracing model with two heads, producing calibrated per-domain mastery. Below twenty attempts the system falls back to a K-Means cluster prior.">
+                  <!-- attempt sequence -->
+                  <text class="fig-t" x="0" y="12">Attempt sequence</text>
+                  <g>
+                    <rect class="fig-ghost anim-rise" style="--d:.05s" x="0" y="26" width="16" height="30" />
+                    <rect class="fig-solid anim-rise" style="--d:.1s" x="22" y="26" width="16" height="30" />
+                    <rect class="fig-ghost anim-rise" style="--d:.15s" x="44" y="26" width="16" height="30" />
+                    <rect class="fig-solid anim-rise" style="--d:.2s" x="66" y="26" width="16" height="30" />
+                    <rect class="fig-solid anim-rise" style="--d:.25s" x="88" y="26" width="16" height="30" />
+                    <rect class="fig-ghost anim-rise" style="--d:.3s" x="110" y="26" width="16" height="30" />
+                  </g>
+                  <text class="fig-s" x="0" y="74">correctness · time on task · gap</text>
+
+                  <!-- flow to model -->
+                  <line class="fig-line anim-draw" style="--len:80;--d:.4s" x1="140" y1="41" x2="220" y2="41" />
+                  <circle class="fig-accent anim-flow" style="--dist:76px;--d:.9s" cx="142" cy="41" r="3" />
+
+                  <!-- transformer -->
+                  <rect class="fig-line anim-in" style="--d:.5s" x="226" y="8" width="180" height="66" />
+                  <text class="fig-n" x="240" y="32">Transformer KT</text>
+                  <text class="fig-s" x="240" y="50">4 layers · 8 heads</text>
+                  <text class="fig-s" x="240" y="66">hidden dim 128</text>
+
+                  <!-- two heads -->
+                  <line class="fig-line anim-draw" style="--len:60;--d:.7s" x1="406" y1="41" x2="452" y2="20" />
+                  <line class="fig-line anim-draw" style="--len:60;--d:.7s" x1="406" y1="41" x2="452" y2="62" />
+                  <text class="fig-s" x="460" y="18">correctness head</text>
+                  <text class="fig-s" x="460" y="66">mastery head</text>
+
+                  <!-- calibration -->
+                  <rect class="fig-line anim-in" style="--d:.85s" x="226" y="96" width="180" height="40" />
+                  <text class="fig-n" x="240" y="121">Isotonic calibration</text>
+                  <line class="fig-line anim-draw" style="--len:30;--d:.8s" x1="316" y1="74" x2="316" y2="96" />
+
+                  <!-- mastery bars -->
+                  <text class="fig-t" x="460" y="106">Calibrated mastery</text>
+                  <g>
+                    <rect class="fig-ghost" x="460" y="116" width="240" height="7" />
+                    <rect class="fig-accent anim-grow" style="--d:1s" x="460" y="116" width="196" height="7" />
+                    <rect class="fig-ghost" x="460" y="130" width="240" height="7" />
+                    <rect class="fig-accent anim-grow" style="--d:1.1s" x="460" y="130" width="122" height="7" />
+                    <rect class="fig-ghost" x="460" y="144" width="240" height="7" />
+                    <rect class="fig-accent anim-grow" style="--d:1.2s" x="460" y="144" width="158" height="7" />
+                  </g>
+
+                  <!-- fallback path -->
+                  <line class="fig-line" x1="0" y1="184" x2="720" y2="184" />
+                  <text class="fig-t" x="0" y="206">Fallback</text>
+                  <text class="fig-s" x="0" y="228">under 20 attempts, or sidecar unreachable</text>
+                  <line class="fig-line anim-draw" style="--len:70;--d:.6s" x1="270" y1="222" x2="330" y2="222" />
+                  <rect class="fig-line anim-in" style="--d:.7s" x="338" y="206" width="150" height="30" />
+                  <text class="fig-s" x="350" y="226">K-Means cluster prior</text>
+                  <line class="fig-line anim-draw" style="--len:70;--d:.9s" x1="488" y1="222" x2="548" y2="222" />
+                  <text class="fig-s" x="556" y="226">degrade, don't fail</text>
+                </svg>
+              </figure>
             </div>
           </div>
         </article>
@@ -414,13 +594,53 @@
 
             <div>
               <ul class="bullets">
-                <li>Built a <strong>21-endpoint REST API</strong> (Node.js, Express, Supabase) with a Gemini-vision pipeline that identifies dishes from a photo and auto-fills macros from verified menu data rather than model estimates.</li>
-                <li>Added a macro-aware dining-hall recommender weighing macro targets, fitness goals, dietary restrictions, and recent history.</li>
-                <li>Deployed on Render and Cloudflare Pages for 50+ users, cutting menu load <strong>94%</strong> by fetching six dining halls concurrently with fault isolation, warming an in-memory cache on startup, and deduplicating items across halls.</li>
+                <li>A <strong>21-endpoint Express 5 API</strong> over the six UW-Madison dining halls. Gemini 2.0 Flash identifies the dish from a tray photo, but it never estimates the macros. It only picks which menu item you're looking at, and the numbers come from the verified Nutrislice entry. A model guessing "roughly 40g protein" is worse than useless to someone actually tracking.</li>
+                <li>The recommender is a deterministic weighted-sum scorer, not a model. Every item gets 0 to 100 from five signals: macro fit against what you have <em>left</em> for the day (50), goal-specific shaping (20), learned preference from your own logs (20), familiarity (10), and a repeat penalty so the list stays varied (-15). No weights to train and no black box, which means when a recommendation looks wrong I can tell you exactly which term caused it.</li>
+                <li>The macro-fit curve peaks when an item covers 15 to 60% of what's left, tapers past that, and zeroes out if it overshoots by more than half. Goals reweight the macros rather than swapping the formula: cut puts 0.50 on calories, bulk puts 0.55 on protein.</li>
+                <li>Dietary restrictions are a hard filter applied before scoring, never a penalty, because Nutrislice overloads one icon field with two opposite meanings. Some icons assert a property (this is vegan), others flag an allergen (this contains dairy). So vegan and halal require a tag to be <em>present</em>, while dairy-free and gluten-free require an allergen tag to be <em>absent</em>. Treating them alike silently surfaces unsafe food, so there are two regression tests whose only job is catching that.</li>
+                <li>Menu load went from 1.8s to about 0.1s, a <strong>94% cut</strong>, by fetching all six halls concurrently with per-hall fault isolation, warming an in-process cache at boot, and deduplicating items that appear in multiple halls. No ORM, no Redis, no build step.</li>
               </ul>
               <div class="tags">
-                <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Supabase</span><span class="tag">Gemini Vision</span><span class="tag">Cloudflare Pages</span>
+                <span class="tag">Express 5</span><span class="tag">Supabase</span><span class="tag">Vertex AI</span><span class="tag">Gemini 2.0 Flash</span><span class="tag">Cloudflare Workers</span>
               </div>
+
+              <figure class="figure">
+                <figcaption class="figure-cap">
+                  <span class="label">Recommendation score, 0 to 100</span>
+                  <span class="label">Deterministic, no trained weights</span>
+                </figcaption>
+                <svg viewBox="0 0 720 200" role="img" aria-label="Five weighted signals compose the recommendation score: macro fit fifty, goal bias twenty, learned preference twenty, familiarity ten, and a repeat penalty of minus fifteen.">
+                  <text class="fig-t" x="0" y="12">Signal weights</text>
+                  <g>
+                    <rect class="fig-accent anim-grow" style="--d:.05s" x="0" y="24" width="300" height="26" />
+                    <rect class="fig-solid anim-grow" style="--d:.2s" x="304" y="24" width="120" height="26" />
+                    <rect class="fig-solid anim-grow" style="--d:.35s" x="428" y="24" width="120" height="26" />
+                    <rect class="fig-solid anim-grow" style="--d:.5s" x="552" y="24" width="60" height="26" />
+                    <rect class="fig-ghost anim-grow" style="--d:.65s" x="616" y="24" width="90" height="26" />
+                  </g>
+                  <text class="fig-s" x="0" y="66">Macro fit 50</text>
+                  <text class="fig-s" x="304" y="66">Goal 20</text>
+                  <text class="fig-s" x="428" y="66">Preference 20</text>
+                  <text class="fig-s" x="552" y="66">Fam 10</text>
+                  <text class="fig-s" x="616" y="66">Repeat -15</text>
+
+                  <line class="fig-line" x1="0" y1="90" x2="720" y2="90" />
+
+                  <text class="fig-t" x="0" y="114">Macro-fit curve, by share of remaining macros</text>
+                  <g>
+                    <line class="fig-line" x1="0" y1="180" x2="470" y2="180" />
+                    <path class="fig-astroke anim-draw" style="--len:520;--d:.7s"
+ d="M0,180 L70,180 L140,132 L280,132 L360,158 L420,180 L470,180" />
+                    <line class="fig-line" x1="140" y1="126" x2="140" y2="184" stroke-dasharray="3 3" />
+                    <line class="fig-line" x1="280" y1="126" x2="280" y2="184" stroke-dasharray="3 3" />
+                    <text class="fig-s" x="120" y="196">15%</text>
+                    <text class="fig-s" x="262" y="196">60%</text>
+                    <text class="fig-s" x="404" y="196">overshoot</text>
+                    <text class="fig-s" x="490" y="136">peak fit</text>
+                    <text class="fig-s" x="490" y="184">scores zero</text>
+                  </g>
+                </svg>
+              </figure>
               <div class="entry-links">
                 <a href="https://nutrisnap-60w.pages.dev/" target="_blank" rel="noopener noreferrer" class="arrow-link">
                   <span>Live app</span>
@@ -458,15 +678,52 @@
 
             <div>
               <ul class="bullets">
-                <li>Built an MV3 event-driven capture layer (service worker, alarms, idle detection) that logs activity without polling and survives service-worker termination.</li>
-                <li>Fed that stream into a <strong>zero-shot DistilBERT classifier</strong> (FastAPI) labelling visits work vs. distraction with no per-site training data.</li>
-                <li>Prototyped an on-device alternative to the rule-based risk scorer: a 5-8-1 PyTorch MLP trained on 3,000 synthetic sessions, weights exported to JSON and inference reimplemented in vanilla JavaScript. Kept the more accurate and interpretable heuristic.</li>
-                <li>Shipped a React + TypeScript dashboard for live risk scores, browsing summaries, and historical trends.</li>
-              <li>Started life as <em>recurr</em> at MadHacks 2025 — a weekend prototype that detected recurring distraction loops and predicted upcoming risk windows. Rebuilt since around the MV3 capture layer and a proper evaluation of the classifier against the heuristic.</li>
+                <li>Records how long you actually spend per site, splits it into focused work versus distraction, and finds the time-of-day windows where you reliably drift. An MV3 capture layer built on the service worker, alarms, and idle detection logs activity without polling, and survives the service worker being killed, which Chrome does aggressively.</li>
+                <li>Most sites can be classified by hostname alone. The genuinely ambiguous ones, YouTube and Reddit and the like, go to a <strong>zero-shot DistilBERT classifier</strong>, so there is no per-site training data to collect. It runs on loopback, on your own machine. Browsing history is about as personal as data gets, and none of it leaves.</li>
+                <li>Shipping a model inside a browser extension usually means shipping a runtime with it, megabytes of ONNX Web or TensorFlow.js for one small prediction. So I trained the risk scorer as a 5-8-1 MLP in PyTorch on 3,000 synthesised sessions, then dumped the state dict to JSON. <strong>The entire model is 57 numbers</strong> and two matrix multiplies, so I rewrote the forward pass in about twenty lines of plain JavaScript. No runtime, no network call, and Vite inlines the weights at build time.</li>
+                <li>Then I compared it against the hand-written heuristic it was meant to replace, and kept the heuristic. It was both more accurate and easier to explain to the person whose habits it was judging. The distilled model stayed in the repo as the more interesting engineering answer and the wrong product one.</li>
+                <li>Began as <em>recurr</em> at MadHacks 2025, a weekend build that spotted recurring distraction loops and predicted upcoming risk windows. Rebuilt since around the MV3 capture layer, a Next.js dashboard for live and historical trends, and regression tests over the summary maths.</li>
               </ul>
               <div class="tags">
-                <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Chrome MV3</span><span class="tag">DistilBERT</span><span class="tag">PyTorch</span><span class="tag">FastAPI</span>
+                <span class="tag">TypeScript</span><span class="tag">React 18</span><span class="tag">Chrome MV3</span><span class="tag">DistilBERT</span><span class="tag">PyTorch</span><span class="tag">FastAPI</span><span class="tag">Vite</span>
               </div>
+
+              <figure class="figure">
+                <figcaption class="figure-cap">
+                  <span class="label">Classification path</span>
+                  <span class="label">On-device, nothing leaves</span>
+                </figcaption>
+                <svg viewBox="0 0 720 170" role="img" aria-label="Browser events are captured by the MV3 service worker. Unambiguous sites resolve by hostname rules; ambiguous ones go to a local zero-shot classifier. Both feed a risk score computed by a 57-parameter model in plain JavaScript.">
+                  <rect class="fig-line anim-in" style="--d:.05s" x="0" y="30" width="132" height="46" />
+                  <text class="fig-n" x="12" y="52">MV3 capture</text>
+                  <text class="fig-s" x="12" y="68">no polling</text>
+
+                  <line class="fig-line anim-draw" style="--len:44;--d:.25s" x1="132" y1="53" x2="176" y2="53" />
+                  <circle class="fig-accent anim-flow" style="--dist:40px;--d:.6s" cx="134" cy="53" r="3" />
+
+                  <path class="fig-line anim-draw" style="--len:70;--d:.35s" d="M176,53 L200,53 L200,20 L232,20" />
+                  <path class="fig-line anim-draw" style="--len:90;--d:.35s" d="M176,53 L200,53 L200,110 L232,110" />
+
+                  <rect class="fig-line anim-in" style="--d:.45s" x="236" y="2" width="180" height="36" />
+                  <text class="fig-s" x="248" y="24">hostname rules</text>
+
+                  <rect class="fig-line anim-in" style="--d:.55s" x="236" y="88" width="180" height="44" />
+                  <text class="fig-n" x="248" y="108">zero-shot DistilBERT</text>
+                  <text class="fig-s" x="248" y="124">loopback only</text>
+                  <text class="fig-s" x="236" y="152">ambiguous: youtube, reddit</text>
+
+                  <path class="fig-line anim-draw" style="--len:90;--d:.7s" d="M416,20 L452,20 L452,66 L488,66" />
+                  <path class="fig-line anim-draw" style="--len:90;--d:.7s" d="M416,110 L452,110 L452,66 L488,66" />
+
+                  <rect class="fig-line anim-in" style="--d:.85s" x="492" y="42" width="228" height="48" />
+                  <text class="fig-n" x="504" y="63">Risk score</text>
+                  <text class="fig-s" x="504" y="80">57 parameters, plain JS</text>
+
+                  <rect class="fig-ghost" x="492" y="104" width="228" height="8" />
+                  <rect class="fig-accent anim-grow" style="--d:1s" x="492" y="104" width="152" height="8" />
+                  <text class="fig-s" x="492" y="130">session drifting</text>
+                </svg>
+              </figure>
             </div>
           </div>
         </article>
@@ -527,7 +784,7 @@
 
         <div class="award-list">
           <article class="award" data-reveal>
-            <div class="label">2024 — 2026</div>
+            <div class="label">2024 - 2026</div>
             <h3 class="award-title">Dean's List, four semesters</h3>
             <p class="award-desc">University of Wisconsin–Madison, College of Letters &amp; Science. Awarded for sustained academic standing across four semesters.</p>
           </article>
@@ -540,13 +797,13 @@
 
           <article class="award" data-reveal>
             <div class="label">Sep 2023</div>
-            <h3 class="award-title">World Robotics Olympiad — National first prize</h3>
+            <h3 class="award-title">World Robotics Olympiad - National first prize</h3>
             <p class="award-desc">First place at the Hong Kong national finals, after placing 4th in the national preliminary round in August.</p>
           </article>
 
           <article class="award" data-reveal>
             <div class="label">Dec 2022</div>
-            <h3 class="award-title">CTEA Cup Robotics — First place</h3>
+            <h3 class="award-title">CTEA Cup Robotics - First place</h3>
             <p class="award-desc">Creative Technology Robotic Competition, 16th CTEA Cup. Designed, built, and programmed land and underwater robots.</p>
           </article>
 
@@ -557,7 +814,7 @@
           </article>
 
           <article class="award" data-reveal>
-            <div class="label">Feb — Mar 2023</div>
+            <div class="label">Feb - Mar 2023</div>
             <h3 class="award-title">Territory-wide speech champion, twice</h3>
             <p class="award-desc">Champion across Hong Kong at the 74th Hong Kong Schools Speech Festival, and at the 12th Hong Kong French Speech Competition.</p>
           </article>
@@ -579,33 +836,33 @@
         <div class="about-grid">
           <div data-reveal>
             <p class="body-text">
-              I grew up in Hong Kong and finished secondary school there in 2024 with an
-              IB diploma score of <strong>42/45</strong>, then moved to Wisconsin. Before university my
-              technical work was robotics — designing, building, and programming land and
-              underwater robots, which took a national first prize at the World Robotics Olympiad
-              in 2023. I taught myself Python in early 2023, starting with the usual text-based
-              games and a URL-to-QR-code tool.
+ I grew up in Hong Kong and finished secondary school there in 2024 with an
+ IB diploma score of <strong>42/45</strong>, then moved to Wisconsin. Before university my
+ technical work was robotics - designing, building, and programming land and
+ underwater robots, which took a national first prize at the World Robotics Olympiad
+ in 2023. I taught myself Python in early 2023, starting with the usual text-based
+ games and a URL-to-QR-code tool.
             </p>
             <p class="body-text">
-              My first piece of independent research was the IB <strong>Extended Essay</strong> in
-              Economics — a 4,000-word investigation carried out over roughly a year, with a
-              self-chosen research question, primary and secondary data collection, and a defended
-              conclusion. It's the closest thing I did before university to the research work I do
-              now at the People and Robots Laboratory: pick a question, decide what evidence would
-              actually answer it, then go and get it.
+ My first piece of independent research was the IB <strong>Extended Essay</strong> in
+ Economics - a 4,000-word investigation carried out over roughly a year, with a
+ self-chosen research question, primary and secondary data collection, and a defended
+ conclusion. It's the closest thing I did before university to the research work I do
+ now at the People and Robots Laboratory: pick a question, decide what evidence would
+ actually answer it, then go and get it.
             </p>
             <p class="body-text">
-              Outside the lab I ran a small home-tutoring service from 2017, teaching 30+ children
-              aged 8–16 including students with additional learning needs. That's a large part of
-              why adaptive learning is the problem I keep returning to — QuickLearn is the same
-              question with better tooling: what should this particular student practise next?
+ Outside the lab I ran a small home-tutoring service from 2017, teaching 30+ children
+ aged 8–16 including students with additional learning needs. That's a large part of
+ why adaptive learning is the problem I keep returning to - QuickLearn is the same
+ question with better tooling: what should this particular student practise next?
             </p>
             <p class="body-text">
-              I volunteered for two years with Fredie Hung Ethnic Minority Services, distributing
-              2,000+ masks, sanitisers, and supplies to over 500 low-income residents during the
-              pandemic, and ran cultural presentations for local community centres. I also led
-              collection teams for HandsOn Hong Kong and Breadline. A reference letter from the
-              organisation's director is available on request.
+ I volunteered for two years with Fredie Hung Ethnic Minority Services, distributing
+ 2,000+ masks, sanitisers, and supplies to over 500 low-income residents during the
+ pandemic, and ran cultural presentations for local community centres. I also led
+ collection teams for HandsOn Hong Kong and Breadline. A reference letter from the
+ organisation's director is available on request.
             </p>
           </div>
 
@@ -616,11 +873,11 @@
             </div>
             <div class="spec">
               <div class="label">Independent research</div>
-              <div class="spec-val">Extended Essay in Economics — 4,000-word independent research paper, IB Diploma</div>
+              <div class="spec-val">Extended Essay in Economics - 4,000-word independent research paper, IB Diploma</div>
             </div>
             <div class="spec">
               <div class="label">Standardised testing</div>
-              <div class="spec-val">SAT Math 790 — useful context for building an SAT prep platform</div>
+              <div class="spec-val">SAT Math 790 - useful context for building an SAT prep platform</div>
             </div>
             <div class="spec">
               <div class="label">Robotics</div>
@@ -658,9 +915,9 @@
         <div class="contact-grid">
           <div data-reveal>
             <p class="body-text">
-              I'm open to 2027 internships in AI engineering, applied ML, and full-stack
-              development, as well as research collaborations. Happy to talk through any of the
-              work above.
+ I'm open to 2027 internships in AI engineering, applied ML, and full-stack
+ development, as well as research collaborations. Happy to talk through any of the
+ work above.
             </p>
             <div class="contact-actions">
               <a href="mailto:pranshulpamecha06@gmail.com" class="btn">
