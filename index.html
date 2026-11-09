@@ -569,7 +569,7 @@
           <div class="sec-eyebrow">
             <span class="label label-accent">03</span>
             <span class="label">Selected work</span>
-            <span class="sec-count">Two featured</span>
+            <span class="sec-count">Three featured</span>
           </div>
           <h2 class="display d-section">Work</h2>
         </div>
@@ -733,6 +733,100 @@
               </figure>
               <div class="entry-links">
                 <a href="https://github.com/Pranshul-13/WeTrack" target="_blank" rel="noopener noreferrer" class="arrow-link">
+                  <span>GitHub</span>
+                  <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pit Crew -->
+        <article class="entry" data-reveal>
+          <div class="entry-top">
+            <span class="label label-accent">W/03</span>
+            <span class="label">BuildFest · Team of three</span>
+          </div>
+          <h3 class="display d-item entry-title">Pit Crew</h3>
+          <p class="entry-sub">A project-aware agent for small software teams. It reconciles the plan with what GitHub says actually happened, so nobody has to keep a task board up to date by hand.</p>
+
+          <div class="entry-grid">
+            <div class="entry-meta">
+              <div class="meta-block">
+                <div class="label">Year</div>
+                <div class="meta-val">2026</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">Team</div>
+                <div class="meta-val">Three engineers</div>
+              </div>
+              <div class="meta-block">
+                <div class="label">My part</div>
+                <div class="meta-val">GitHub ingestion · plan API · GitHub App · backup</div>
+              </div>
+            </div>
+
+            <div>
+              <ul class="bullets">
+                <li>A plan and a repository drift apart, and a task board only notices when someone remembers to drag a card. Pit Crew keeps the team's brief, tasks, owners, dependencies, and milestones on one side and normalised GitHub activity on the other, then reconciles them: what state each task is really in, which milestones are slipping, which branches are about to collide, and what the plan should change. It is built as Next.js 16 and React 19 on the front, Hono, Zod, and PostgreSQL behind it, with a Railway-ready API and the dashboard on Vercel.</li>
+                <li>I built the ingestion layer, because a coordination tool is only as good as its facts. Webhooks are verified with an <strong>HMAC-SHA256 signature checked against the raw request bytes</strong> (re-serialising the JSON would change the hash) using a timing-safe comparison. Each delivery ID is claimed once at the database, a failed delivery can be retried, and anything already stored is a no-op. Events land in an <strong>append-only table</strong> whose Postgres trigger rejects updates and direct deletes, so the history cannot be quietly rewritten by the analysis built on top of it.</li>
+                <li>Backfill runs through the same path as live webhooks. When a repository is first connected, pull requests, branches, branch-unique commits, and changed files are imported from the REST API using the same normaliser and dedupe keys, so a second run inserts nothing and a webhook racing a backfill collapses into one event. Connecting is self-service through a GitHub App rather than pasted tokens: the OAuth state is hashed and expires in ten minutes, the user's token is <strong>encrypted at rest with AES-256-GCM</strong>, and later calls use one-hour installation tokens, so no personal access token ever reaches the browser.</li>
+                <li>Task state comes from rules, not a model. A merged pull request with nothing newer reads as complete, an open pull request or active branch reads as in progress, and no linked activity reads as not started, each carrying a confidence and the events behind it. Dependencies are walked in topological order with real cycle detection, so a task whose prerequisite has not started is marked possibly blocked, while one whose prerequisite is merely under way is not. A human override always wins, and the computed value is kept beside it. Five kinds of health signal sit on top: milestone slipping, dependency incomplete, must-have with no activity, plan and repository disagreeing, and possibly blocked.</li>
+                <li>Events reach tasks through task keys like PC-12, matched case-insensitively across the PR title, branch name, and commit message. Anything without a key goes to a model, and its links count toward state only at <strong>0.8 confidence or higher</strong>, shown as AI-inferred and rejectable; lower-confidence ones wait in a review queue. That job is capped at 30 calls an hour on the smart tier before overflowing to the fast one.</li>
+                <li>Branch collisions are <strong>exact file overlap between active branches</strong>, computed from GitHub's three-dot compare against the default branch rather than by summing push payloads, which overcounts after a merge from main or a revert. Lockfiles are ignored by default, and the interface says collision risk, not conflict, because overlapping files do not guarantee one.</li>
+                <li>AI is optional by design. A two-tier router sends cheap jobs to a fast model and open-ended reasoning to a smart one across Groq, OpenAI, OpenRouter, Anthropic, or a Microsoft Foundry agent, with a daily token budget, a response cache, and an audit record for every call. With no key configured, everything falls back to rules. The Maintainer that answers what needs attention can only call six read-only tools, and every citation it returns is checked against real IDs that a tool actually returned. If it cites something invented, the answer is discarded and a rules-based one is returned instead. Replans are proposals, never edits: a suggested change has to validate against a strict five-operation schema, and accepting it creates a new plan version while rejected ones stay in history.</li>
+                <li>Around that: export and restore round-trip a whole project as NDJSON with a SHA-256 footer over every line, discovering tables by their project_id column so new tables travel without registration. The repository carries a <strong>39-endpoint API contract</strong>, a 20-table base schema with 13 ordered migrations, and 17 backend test files that run against a real embedded Postgres. On the dashboard I built the project timeline, branches panel, link-review queue, and Maintainer panel.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">TypeScript</span><span class="tag">Next.js 16</span><span class="tag">Hono</span><span class="tag">PostgreSQL</span><span class="tag">Zod</span><span class="tag">GitHub App</span><span class="tag">Tailwind CSS</span>
+              </div>
+
+              <figure class="figure">
+                <figcaption class="figure-cap">
+                  <span class="label">The core loop</span>
+                  <span class="label">Plan against repository, reconciled</span>
+                </figcaption>
+                <svg viewBox="0 0 720 224" role="img" aria-label="Two inputs feed the analysers: the team-defined plan, and factual append-only GitHub activity. The analysers run rules first with an optional model on top, and produce task state with evidence, health signals, branch collision risks, and replan proposals for review. Human overrides always win, and every conclusion links back to the events behind it.">
+                  <text class="fig-t" x="0" y="10">Team-defined</text>
+                  <rect class="fig-line anim-in" style="--d:.05s" x="0" y="24" width="170" height="52" />
+                  <text class="fig-s" x="12" y="46">Brief, tasks, owners,</text>
+                  <text class="fig-s" x="12" y="62">dependencies, milestones</text>
+
+                  <text class="fig-t" x="0" y="106">Factual, append-only</text>
+                  <rect class="fig-line anim-in" style="--d:.15s" x="0" y="120" width="170" height="52" />
+                  <text class="fig-s" x="12" y="142">Pushes, pull requests,</text>
+                  <text class="fig-s" x="12" y="158">branches, changed files</text>
+
+                  <line class="fig-line anim-draw" style="--len:67;--d:.3s" x1="170" y1="50" x2="226" y2="87" />
+                  <line class="fig-line anim-draw" style="--len:66;--d:.35s" x1="170" y1="146" x2="226" y2="113" />
+
+                  <text class="fig-t" x="230" y="10">Analysers</text>
+                  <rect class="fig-line anim-in" style="--d:.45s" x="230" y="60" width="190" height="80" />
+                  <text class="fig-n" x="244" y="88">Reconcile</text>
+                  <text class="fig-s" x="244" y="108">Rules first</text>
+                  <text class="fig-s" x="244" y="124">Optional model on top</text>
+
+                  <line class="fig-line anim-draw" style="--len:80;--d:.6s" x1="420" y1="100" x2="476" y2="43" />
+                  <line class="fig-line anim-draw" style="--len:59;--d:.65s" x1="420" y1="100" x2="476" y2="81" />
+                  <line class="fig-line anim-draw" style="--len:59;--d:.7s" x1="420" y1="100" x2="476" y2="119" />
+                  <line class="fig-line anim-draw" style="--len:80;--d:.75s" x1="420" y1="100" x2="476" y2="157" />
+
+                  <text class="fig-t" x="480" y="10">Interpreted</text>
+                  <rect class="fig-line anim-in" style="--d:.8s" x="480" y="28" width="240" height="30" />
+                  <text class="fig-s" x="492" y="47">Task state, with evidence</text>
+                  <rect class="fig-line anim-in" style="--d:.88s" x="480" y="66" width="240" height="30" />
+                  <text class="fig-s" x="492" y="85">Health signals</text>
+                  <rect class="fig-line anim-in" style="--d:.96s" x="480" y="104" width="240" height="30" />
+                  <text class="fig-s" x="492" y="123">Branch collision risks</text>
+                  <rect class="fig-line anim-in" style="--d:1.04s" x="480" y="142" width="240" height="30" />
+                  <text class="fig-s" x="492" y="161">Replan proposals, for review</text>
+
+                  <line class="fig-line" x1="0" y1="190" x2="720" y2="190" />
+                  <text class="fig-s" x="0" y="212">Human overrides win. Every conclusion links back to the events behind it.</text>
+                </svg>
+              </figure>
+              <div class="entry-links">
+                <a href="https://github.com/BuildFest/project" target="_blank" rel="noopener noreferrer" class="arrow-link">
                   <span>GitHub</span>
                   <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg>
                 </a>
