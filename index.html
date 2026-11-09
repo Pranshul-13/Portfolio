@@ -163,7 +163,7 @@
           <div class="spec-list" data-reveal>
             <div class="spec">
               <div class="label">Programming languages</div>
-              <div class="spec-val">Java · Python · JavaScript / TypeScript · SQL · C · R</div>
+              <div class="spec-val">Java · Python · JavaScript / TypeScript · SQL · C · C++ · R</div>
             </div>
             <div class="spec">
               <div class="label">Spoken languages</div>
@@ -171,20 +171,21 @@
             </div>
             <div class="spec">
               <div class="label">Frameworks</div>
-              <div class="spec-val">React · Next.js · Node.js · Express · FastAPI · Flask · REST APIs · WebSockets</div>
+              <div class="spec-val">React · Next.js · Node.js · Express · FastAPI · Flask · REST APIs · WebSockets · Chrome Extensions API</div>
             </div>
             <div class="spec">
               <div class="label">AI &amp; Machine Learning</div>
-              <div class="spec-val">PyTorch · ONNX Runtime · YOLOv8 · scikit-learn · Google Gemini · Azure OpenAI · Computer Vision · NLP · Responsible AI</div>
+              <div class="spec-val">PyTorch · ONNX Runtime · YOLOv8 · scikit-learn · Google Gemini · Azure OpenAI · Machine Learning · Computer Vision · NLP · LLM Integration · Responsible AI · GitHub Copilot · Claude Code</div>
             </div>
             <div class="spec">
               <div class="label">Cloud &amp; Infrastructure</div>
-              <div class="spec-val">Git · Supabase / Postgres · MongoDB · Docker · Azure · Cloudflare Pages · Render · Git-based CI/CD</div>
+              <div class="spec-val">Git · Supabase / Postgres · MongoDB · Docker · Azure · AWS · GCP · Cloudflare Pages · Railway · Render · Git-based CI/CD</div>
             </div>
             <div class="spec">
               <div class="label">Coursework</div>
               <div class="chips">
                 <span class="chip">Data Structures &amp; Algorithms I &amp; II</span>
+                <span class="chip">AI-assisted Software Development</span>
                 <span class="chip">Machine Organization &amp; Programming</span>
                 <span class="chip">Theoretical AI</span>
                 <span class="chip">Databases</span>
@@ -239,7 +240,7 @@
                 <li>Turning free-form practice conversations into a usable question bank is mostly a validation problem, not a generation one. The pipeline runs in four stages with Gemini, then filters hard: questions whose stem leaks the answer, near-duplicates, and banned answers all get caught and sent back through a revise-and-refilter loop up to three times. What survives is the bank.</li>
                 <li>The whole thing is built against injected LLM and logger interfaces rather than calling the API directly, which sounds like ceremony until you need to test it. Three mock-LLM harnesses, 30 invariants, and 8 Jest tests give a <strong>full regression run in under a minute at zero API cost</strong>, so the safeguards get exercised on every change instead of whenever someone remembers to burn tokens.</li>
                 <li>Built the adaptive review engine on MongoDB. Vocabulary is ranked by per-word error rate and exposure history, so the terms that surface each session are the ones actually costing the learner something, and words re-queue until they stick rather than being retired after one correct answer.</li>
-                <li>Building the full-stack English-to-Chinese spoken-practice platform (React, Node.js/Express, MongoDB, JWT) behind an approved <strong>50-user, 20-session study</strong>, with adaptive Gemini session APIs and a 30-minute timed assessment that auto-submits so every participant's data is collected under identical conditions.</li>
+                <li>Building the full-stack English-to-Chinese spoken-practice platform (React, Node.js/Express, MongoDB, JWT) behind an approved <strong>50-user, 20-session study</strong>, with adaptive Gemini session APIs and a 30-minute timed assessment that auto-submits so every participant's data is collected under identical conditions. The design is iterated through weekly syncs and thrice-weekly written updates with the research lead.</li>
               </ul>
               <div class="tags">
                 <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span><span class="tag">Gemini</span><span class="tag">Jest</span><span class="tag">Responsible AI</span>
@@ -471,17 +472,17 @@
               </div>
               <div class="meta-block">
                 <div class="label">Stack</div>
-                <div class="meta-val">Next.js · Supabase · PyTorch · ONNX Runtime · FastAPI · Cloudflare Workers</div>
+                <div class="meta-val">Next.js · Supabase · PyTorch · ONNX Runtime · FastAPI · Cloudflare Workers · Git-based CI/CD</div>
               </div>
             </div>
 
             <div>
               <ul class="bullets">
-                <li>The hard part of adaptive practice isn't showing questions, it's knowing what a student actually knows. QuickLearn models that in three layers that hand off to each other as evidence accumulates: a rules engine sorts new students into one of six personas, K-Means++ with power-iteration PCA places them against the cohort, and once there are enough attempts a Transformer takes over. Each layer owns a panel on the dashboard, so the student can see which one is currently driving their recommendations.</li>
+                <li>The hard part of adaptive practice isn't showing questions, it's knowing what a student actually knows. QuickLearn models that in three layers that hand off to each other as evidence accumulates: a rules engine sorts new students into one of six personas, K-Means++ with power-iteration PCA places them against the cohort, and once there are enough attempts a Transformer takes over. Each layer owns a panel on the dashboard, so the student can see which one is currently driving their recommendations. The IRT 3PL and K-Means priors are what cold-start students who have no history.</li>
                 <li>The knowledge-tracing model is a 4-layer, 8-head Transformer with two prediction heads: one estimates whether the next question in a given domain will be answered correctly, the other emits a per-domain mastery vector. Raw model confidence is badly calibrated, so an isotonic regression stage sits on the output and turns scores into probabilities that mean what they say.</li>
-                <li>Serving it honestly was the interesting constraint. The model trains in PyTorch, exports to ONNX at opset 18 with a dynamic batch axis, and is served by FastAPI behind a bearer token, with the artifact in object storage and a partial unique index in Postgres guaranteeing exactly one active model version. Reads go cache first, then live inference, then a cluster prior, so if the sidecar is unreachable the dashboard degrades to a worse answer instead of an error.</li>
+                <li>Serving it honestly was the interesting constraint. The model trains in PyTorch, exports to ONNX at opset 18 with a dynamic batch axis, and is served by FastAPI on Render behind a bearer token, with the artifact in object storage and a partial unique index in Postgres guaranteeing exactly one active model version. Reads go cache first, then live inference, then a cluster prior, so if the sidecar is unreachable the dashboard degrades to a worse answer instead of an error. Scoring per-domain mastery runs at <strong>p95 14 ms</strong> across 8 forward passes per request.</li>
                 <li>Evaluation was built to be hard to fool. Windows are split chronologically per student, 70/15/15, so the model is never scored on a question it has effectively already seen. Across 101k+ simulated attempts that gives <strong>0.607 AUC</strong> against a 0.730 oracle ceiling, which is 83.2% of what was actually achievable on this data. Reporting the ceiling alongside the score matters more to me than reporting the score.</li>
-                <li>Around the model sit the pieces that make it a product: a 3PL IRT calibration layer, multi-stage test routing, an SM-2 derived review scheduler, a score projection from theta, and a mistake taxonomy that separates a genuine concept gap from a slip, a rush, a trap answer, or simple decay. 1,610 questions across 8 domains and 29 subskills, all IRT-calibrated.</li>
+                <li>Around the model sit the pieces that make it a product: a 3PL IRT calibration layer, multi-stage test routing, an SM-2 derived review scheduler, a score projection from theta, and a mistake taxonomy that separates a genuine concept gap from a slip, a rush, a trap answer, or simple decay. 1,610 questions across 8 domains and 29 subskills, generated through an LLM-assisted pipeline (Azure OpenAI plus matplotlib figures) and all IRT-calibrated.</li>
                 <li>Shipped to <strong>35 beta users</strong> recruited at random through social media, delivering ~11% larger weak-skill mastery gains and routing ~30% more practice toward weak skills than non-adaptive drilling.</li>
               </ul>
               <div class="tags">
@@ -549,6 +550,12 @@
                   <text class="fig-s" x="556" y="226">degrade, don't fail</text>
                 </svg>
               </figure>
+              <div class="entry-links">
+                <a href="https://quicklearn.pranshulpamecha06.workers.dev/home" target="_blank" rel="noopener noreferrer" class="arrow-link">
+                  <span>Live app</span>
+                  <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg>
+                </a>
+              </div>
             </div>
           </div>
         </article>
@@ -598,10 +605,10 @@
                 <li>The recommender is a deterministic weighted-sum scorer, not a model. Every item gets 0 to 100 from five signals: macro fit against what you have <em>left</em> for the day (50), goal-specific shaping (20), learned preference from your own logs (20), familiarity (10), and a repeat penalty so the list stays varied (-15). No weights to train and no black box, which means when a recommendation looks wrong I can tell you exactly which term caused it.</li>
                 <li>The macro-fit curve peaks when an item covers 15 to 60% of what's left, tapers past that, and zeroes out if it overshoots by more than half. Goals reweight the macros rather than swapping the formula: cut puts 0.50 on calories, bulk puts 0.55 on protein.</li>
                 <li>Dietary restrictions are a hard filter applied before scoring, never a penalty, because Nutrislice overloads one icon field with two opposite meanings. Some icons assert a property (this is vegan), others flag an allergen (this contains dairy). So vegan and halal require a tag to be <em>present</em>, while dairy-free and gluten-free require an allergen tag to be <em>absent</em>. Treating them alike silently surfaces unsafe food, so there are two regression tests whose only job is catching that.</li>
-                <li>Menu load went from 1.8s to about 0.1s, a <strong>94% cut</strong>, by fetching all six halls concurrently with per-hall fault isolation, warming an in-process cache at boot, and deduplicating items that appear in multiple halls. No ORM, no Redis, no build step.</li>
+                <li>Menu load went from 1.8s to about 0.1s, a <strong>94% cut</strong>, by fetching all six halls concurrently with per-hall fault isolation, warming an in-process cache at boot, and deduplicating items that appear in multiple halls. No ORM, no Redis, no build step. Deployed on Render and Cloudflare Pages for 50+ users.</li>
               </ul>
               <div class="tags">
-                <span class="tag">Express 5</span><span class="tag">Supabase</span><span class="tag">Vertex AI</span><span class="tag">Gemini 2.0 Flash</span><span class="tag">Cloudflare Workers</span>
+                <span class="tag">Express 5</span><span class="tag">Supabase</span><span class="tag">Vertex AI</span><span class="tag">Gemini 2.0 Flash</span><span class="tag">Cloudflare Workers</span><span class="tag">Render</span>
               </div>
 
               <figure class="figure">
@@ -724,6 +731,12 @@
                   <text class="fig-s" x="492" y="130">session drifting</text>
                 </svg>
               </figure>
+              <div class="entry-links">
+                <a href="https://github.com/Pranshul-13/WeTrack" target="_blank" rel="noopener noreferrer" class="arrow-link">
+                  <span>GitHub</span>
+                  <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg>
+                </a>
+              </div>
             </div>
           </div>
         </article>
